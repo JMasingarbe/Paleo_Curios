@@ -13,39 +13,121 @@
         <img src="" alt="Logo">
         <nav>
             <ul>
-                <li><a href="">Accueil</a></li>
-                <li><a href="">Articles</a></li>
-                <li><a href="">Collections</a></li>
-                <li><a href="">À propos</a></li>
-                <li><a href="">Paléontologues</a></li>
+                <li><a href="home.html">Accueil</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="log_in.html">Paléontologues</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Main -->
     <main>
+        <!-- Search bar & filter button -->
         <input type="search" id="searchbar" name="searchbar" placeholder="Rechercher">
+        <button type="button">Icon filtre</button>
+
+        <!-- Filter -->
         <form action="#" method="post">
-            <h3>Filtres :</h3>
-            <button type="button">Icon X</button>
-            
-            <input type="checkbox" name="exposed" id="exposed">
-            <label for="exposed">Exposé</label>
+            <fieldset>
+                <h3>Filtres :</h3>
+                <button type="button">Icon X</button>
+                
+                <!-- Checkbox is exposed ? -->
+                <div>
+                    <input type="checkbox" name="exposed" id="exposed">
+                    <label for="exposed">Exposé</label>
+                </div>
 
+                <!-- Dropdown continent -->
+                <div>
+                    <label for="continent">Continent :</label>
+                    <select name="continent" id="continent">
+                        <option value="none_continent">Aucun sélectionné</option>
+                        <option value="africa">Afrique</option>
+                        <option value="north_america">Amérique du Nord</option>
+                        <option value="south_america">Amérique du Sud</option>
+                        <option value="antartica">Antarctique</option>
+                        <option value="asia">Asie</option>
+                        <option value="europa">Europe</option>
+                        <option value="oceania">Océanie</option>
+                    </select>
+                </div>
 
+                <!-- Dropdown collection -->
+                <div>
+                    <label for="collection">Collection :</label>
+                    <select name="collection" id="collection">
+                        <option value="all_collections">Toutes</option>
+                        <option value="vertebrate">Vertébrés</option>
+                        <option value="intebrate">Invertébrés</option>
+                        <option value="insect">Insectes</option>
+                        <option value="plant">Plantes</option>
+                        <option value="other_fossils">Autres</option>
+                    </select>
+                </div>
+
+                <!-- Search country -->
+                <div>
+                    <label for="search_country">Pays :</label>
+                    <input type="text" name="search_country" id="search_country" placeholder="Pays">
+                </div>
+
+                <button type="submit"><a href="collection.html">Appliquer</a></button>
+            </fieldset>
         </form>
+
+        <!-- Collections -->
+        <a href="collection.html">
+            <div>
+                <img src="" alt="Photo de la collection des fossiles de vertébrés">
+                <h2>Vertébrés</h2>
+            </div>
+        </a>
+
+        <a href="collection.html">
+            <div>
+                <img src="" alt="Photo de la collection des fossiles de invertébrés">
+                <h2>Invertébrés</h2>
+            </div>
+        </a>
+
+        <a href="collection.html">
+            <div>
+                <img src="" alt="Photo de la collection des fossiles de insectes">
+                <h2>Insectes</h2>
+            </div>
+        </a>
+
+        <a href="collection.html">
+            <div>
+                <img src="" alt="Photo de la collection des fossiles de plantes">
+                <h2>Plantes</h2>
+            </div>
+        </a>
+
+        <a href="collection.html">
+            <div>
+                <img src="" alt="Photo de la collection des autres fossiles">
+                <h2>Autres</h2>
+            </div>
+        </a>
+
+        <a href="collection.html"><h2>Toute la collection</h2></a>
+
     </main>
 
     <!-- Footer -->
     <footer>
         <nav>
             <ul>
-                <li><a href="">Accueil</a></li>
-                <li><a href="">Articles</a></li>
-                <li><a href="">Collections</a></li>
-                <li><a href="">À propos</a></li>
-                <li><a href="">Contact & FAQ</a></li>
-                <li><a href="">Mentions légales</a></li>
+                <li><a href="home.html">Accueil</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact_faq.html">Contact & FAQ</a></li>
+                <li><a href="legal_notices.html">Mentions légales</a></li>
             </ul>
         </nav>
         <p>©Paléo Curios 2026 - Tous droits réservés</p>
