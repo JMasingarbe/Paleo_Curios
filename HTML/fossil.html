@@ -24,7 +24,51 @@
 
     <!-- Main -->
     <main>
+        <!-- Breadcrumbs -->
+        <ul>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="collection.html">Collection</a></li>
+            <li>Fossile</li>
+        </ul>
 
+        <!-- Checkbox to select the fossil for statistics -->
+        <input type="checkbox" name="fossil_selected" id="fossil_selected">
+        <label for="fossil_selected">Sélectionner</label>
+
+        <h2>Nom du fossile</h2>
+        <h3>Espèce : <a href="https://fr.wikipedia.org/wiki/Fossile">Nom de l'espèce</a></h3>
+
+        <!-- Photo carousel -->
+        <button type="button"><</button>
+        <ul>
+            <li><img src="#" alt="Photo fossile 1"></li>
+            <li><img src="#" alt="Photo fossile 2"></li>
+            <li><img src="#" alt="Photo fossile 3"></li>
+        </ul>
+        <span>dot</span><span>dot</span><span>dot</span>
+        <button type="button">></button>
+
+        <!-- Fossil's description -->
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, eveniet a quidem est minima rem excepturi? Earum, illum odio sed impedit maiores vel, recusandae quam quod distinctio est numquam unde.
+        Ipsa consectetur dolores qui earum voluptatibus architecto asperiores obcaecati voluptate ab molestias, quibusdam molestiae saepe perferendis iste reprehenderit vitae recusandae ratione animi sequi deserunt maiores natus, nesciunt accusamus! Ad, alias.</p>
+
+        <div class="divider"></div>
+
+        <!-- Fossil characteristics -->
+        <p><strong>Exposé :</strong> <span id="is_exposed">Oui</span></p>
+        <p><strong>Type de fossile :</strong> <span id="fossil_type">Type de fossile</span></p>
+            <!-- Fossil dating on the timeline -->
+        <p><strong>Datation :</strong> <span id="fossil_dating">Date</span></p>
+        <div id="fossil_timeline">
+            <img src="" alt="Frise chronologique">
+            <div id="timeline_indicator"></div>
+        </div>
+            <!-- Fossil's extraction place -->
+        <p><strong>Extrait :</strong> <span id="fossil_extract">Lieu d'extraction</span></p>
+        <div id="extraction_map"></div>
+
+        <!-- Button to the form to contact the fossil's owner -->
+        <button type="button">Contacter le propriétaire</button>
     </main>
 
     <!-- Footer -->
