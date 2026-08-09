@@ -1,0 +1,116 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Code Pro", monospace;
+  color: #050100;
+  background-color: #FAE9D2;
+}
+
+h3, h2, h1 {
+  font-family: "Alegreya", serif;
+}
+
+a {
+  color: #050100;
+  text-decoration: none;
+}
+
+header, footer {
+  color: #FAE9D2;
+  background-color: #050100;
+  padding: 1vh 4vw;
+}
+header ul, footer ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5vw;
+  font-family: "Source Code Pro", monospace;
+}
+header ul li > a, footer ul li > a {
+  color: #FAE9D2;
+}
+header ul li > a:hover, footer ul li > a:hover {
+  font-size: 1.2rem;
+  text-decoration-color: #E7512C;
+  text-decoration-line: underline;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header img {
+  height: 10vh;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  margin: 5vh 5vw;
+}
+
+article {
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem #E7512C;
+  border-radius: 15px 2.5px 15px 2.5px;
+}
+
+.divider {
+  width: 500px;
+  height: 0.2rem;
+  background-color: #1C377E;
+  margin: 2rem 1rem;
+}
+
+.link_button {
+  padding: 0.4rem 0.6rem;
+  color: #FAE9D2;
+  background-color: #1C377E;
+  border-radius: 7.5px;
+}
+.link_button:hover {
+  box-shadow: 0.3rem 0.3rem rgba(5, 1, 0, 0.25);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.sec_link_button {
+  padding: 0.4rem 0.6rem;
+  background-color: rgba(231, 81, 44, 0.5);
+  border: solid 1.5px #E7512C;
+  border-radius: 7.5px;
+}
+.sec_link_button:hover {
+  box-shadow: 0.3rem 0.3rem rgba(5, 1, 0, 0.25);
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+.breadcrumbs {
+  list-style: none;
+  padding: 0;
+}
+.breadcrumbs li {
+  display: inline;
+}
+.breadcrumbs li + li:before {
+  content: "> ";
+}
+.breadcrumbs li a {
+  font-weight: 625;
+}
+.breadcrumbs li a:hover {
+  font-size: 1rem;
+  text-decoration-color: #E7512C;
+  text-decoration-line: underline;
+}
+
+/*# sourceMappingURL=main.css.map */

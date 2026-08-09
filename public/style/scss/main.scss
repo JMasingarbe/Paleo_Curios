@@ -1,0 +1,121 @@
+@use 'sass:color';
+@use './variables.scss' as *;
+@use './mixins.scss' as m;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font;
+    color: $dark-color;
+    background-color: $light-color;
+}
+
+h3, h2, h1 {
+    font-family: $title-font;
+}
+
+a {
+    color: $dark-color;
+    text-decoration: none;
+}
+
+header, footer {
+    color: $light-color;
+    background-color: $dark-color;
+    padding: 1vh 4vw;
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 1.5vw;
+
+        font-family: $font;
+        
+        li>a {
+            color: $light-color;
+            &:hover {
+                @include m.link_hover(1.2, $accent-color);
+            }
+        }
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        height: 10vh;
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    margin: 5vh 5vw;
+}
+
+
+
+article {
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0.20rem 0.20rem 0.5rem $accent-color;
+    border-radius: 15px 2.5px 15px 2.5px;
+}
+
+.divider {
+    width: 500px;
+    height: 0.2rem;
+    background-color: $sec-accent-color;
+    margin: 2rem 1rem;
+}
+
+.link_button {
+    padding: 0.4rem 0.6rem;
+    color: $light-color;
+    background-color: $sec-accent-color;
+    border-radius: 7.5px;
+    &:hover {
+        box-shadow: 0.3rem 0.3rem color.scale($dark-color, $alpha: -75%);
+        text-decoration: none;
+        font-size: 1.05rem;
+    }
+}
+
+.sec_link_button {
+    padding: 0.4rem 0.6rem;
+    background-color: color.scale($accent-color, $alpha: -50%);
+    border: solid 1.5px $accent-color;
+    border-radius: 7.5px;
+    &:hover {
+        box-shadow: 0.3rem 0.3rem color.scale($dark-color, $alpha: -75%);
+        text-decoration: none;
+        font-size: 1.05rem;
+    }
+}
+
+.breadcrumbs {
+    list-style: none;
+    padding: 0;
+
+    li {
+        display: inline;
+        &+li:before {
+            content: ">\00a0";
+        }
+
+        a {
+            font-weight: 625;
+            &:hover {
+                @include m.link_hover(1, $accent-color);
+            }
+        }
+    }
+}
