@@ -1,0 +1,62 @@
+@charset "UTF-8";
+@media screen and (min-width: 1280px) {
+  main {
+    display: grid;
+    grid-template-columns: 3fr 5% 4fr;
+    grid-auto-rows: max-content;
+  }
+  main h2 {
+    margin-top: 0;
+  }
+  main #last_article {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    grid-area: 1/1/4/2;
+  }
+  main #last_article h2 {
+    margin-bottom: 0.5rem;
+  }
+  main #last_article #article_author {
+    margin: 0 0 0.75rem 0;
+  }
+  main #last_article img {
+    border-radius: 12.5px;
+    align-self: center;
+  }
+  main #last_article p {
+    text-align: justify;
+  }
+  main #last_article p:before {
+    content: "    ";
+  }
+  main #last_article a {
+    align-self: center;
+  }
+  main .divider {
+    justify-self: center;
+    align-self: center;
+  }
+  main .divider:first-of-type {
+    rotate: 90deg;
+    grid-area: 1/2/4/3;
+  }
+  main .divider:last-of-type {
+    grid-area: 2/3/3/4;
+  }
+  main #trend_fossils {
+    grid-area: 1/3/2/4;
+  }
+  main #random_fossil {
+    grid-area: 3/3/4/4;
+    display: flex;
+    flex-direction: column;
+  }
+  main #random_fossil #random_fossil_card {
+    align-self: center;
+    width: 30vw;
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */
