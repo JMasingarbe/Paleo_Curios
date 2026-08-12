@@ -1,4 +1,73 @@
-@charset "UTF-8";
+@media screen and (max-width: 1280px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 8vw;
+  }
+  main #last_article {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+  }
+  main #last_article img {
+    align-self: center;
+    border-radius: 20px;
+    width: 75vw;
+    max-width: 400px;
+  }
+  main #last_article p {
+    text-indent: 2rem;
+  }
+  main #last_article p:first-of-type {
+    margin-top: 0;
+  }
+  main #last_article p:last-of-type {
+    text-align: justify;
+  }
+}
+@media screen and (max-width: 1280px) and (max-width: 480px) {
+  main #last_article p:last-of-type {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 1280px) {
+  main #last_article a {
+    align-self: center;
+  }
+  main .divider {
+    align-self: center;
+  }
+  main #trend_fossils div {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main #random_fossil {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  main #random_fossil article#random_fossil_card {
+    align-self: center;
+    width: 75vw;
+    max-width: 500px;
+    display: flex;
+  }
+}
+@media screen and (max-width: 1280px) and (max-width: 600px) {
+  main #random_fossil article#random_fossil_card {
+    flex-direction: column;
+  }
+  main #random_fossil article#random_fossil_card div {
+    align-self: center;
+  }
+}
+@media screen and (max-width: 1280px) {
+  main #random_fossil article#random_fossil_card #random_fossil_description {
+    margin: 0.5rem;
+  }
+}
 @media screen and (min-width: 1280px) {
   main {
     display: grid;
@@ -28,7 +97,7 @@
     text-align: justify;
   }
   main #last_article p:before {
-    content: "    ";
+    text-indent: 2rem;
   }
   main #last_article a {
     align-self: center;

@@ -92,7 +92,7 @@ header li > a:hover, footer li > a:hover {
     border-radius: 10px;
   }
   header nav ul li {
-    padding: 1rem 5rem;
+    padding: 1rem 5vw;
   }
   header nav ul li a {
     font-size: 1.2rem;
@@ -103,9 +103,19 @@ header li > a:hover, footer li > a:hover {
   footer {
     flex-direction: column;
   }
-  footer li {
+  footer ul {
+    padding: 0;
+  }
+  footer ul li {
     text-align: center;
-    padding: 1rem 5rem;
+    padding: 1rem 0;
+  }
+  footer ul li a {
+    text-decoration: underline #E7512C;
+  }
+  footer p {
+    margin: 0 0.5rem 1rem 0.5rem;
+    text-align: center;
   }
 }
 @media screen and (min-width: 768px) {
@@ -157,6 +167,8 @@ article {
 article img {
   border-radius: 10px;
   margin-bottom: 0.4rem;
+  width: 65vw;
+  max-width: 200px;
 }
 article h3 {
   margin: 0;

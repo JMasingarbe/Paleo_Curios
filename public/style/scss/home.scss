@@ -1,7 +1,71 @@
+
 // Phone landscape & tablet screen
 @media screen and (max-width: 1280px) {
-    
-    
+    main {
+        display: flex;
+        flex-direction: column;
+        
+        margin: 0 8vw;
+        
+        #last_article {
+            display: flex;
+            flex-direction: column;
+            align-self: start;
+            img {
+                align-self: center;
+                border-radius: 20px;
+                width: 75vw;
+                max-width: 400px;
+            }
+            p {
+                text-indent: 2rem;
+                &:first-of-type {
+                    margin-top: 0;
+                }
+                &:last-of-type {
+                    text-align: justify;
+                    @media screen and (max-width: 480px) {
+                        text-align: left;
+                    }
+                }
+            }
+            a {
+                align-self: center;
+            }
+        }
+        .divider {
+            align-self: center;
+        }
+        #trend_fossils {
+            div {
+                display: inline-flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        #random_fossil {
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            article#random_fossil_card {
+                align-self: center;
+                width: 75vw;
+                max-width: 500px;
+                
+                display: flex;
+                @media screen and (max-width: 600px) {
+                    flex-direction: column;
+                    div {
+                        align-self: center;
+                    }
+                }
+                #random_fossil_description {
+                    margin: 0.5rem;
+                }
+            }
+        }
+    }
 }
 
 // Desktop screen   
@@ -37,7 +101,7 @@
             p {
                 text-align: justify;
                 &:before {
-                    content: "\00a0\00a0\00a0\00a0";
+                    text-indent: 2rem;
                 }
             }
     

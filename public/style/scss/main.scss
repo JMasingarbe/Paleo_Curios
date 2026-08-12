@@ -92,7 +92,7 @@ header, footer {
                 background-color: $light-color;
                 border-radius: 10px;
                 li {
-                    padding: 1rem 5rem;
+                    padding: 1rem 5vw;
                     a {
                         font-size: 1.2rem;
                         color: $dark-color;
@@ -106,9 +106,19 @@ header, footer {
 
     footer {
         flex-direction: column;
-        li {
+        ul {
+            padding: 0;
+            li {
+                text-align: center;
+                padding: 1rem 0;
+                a {
+                    text-decoration: underline $accent-color;
+                }
+            }
+        }
+        p {
+            margin: 0 0.5rem 1rem 0.5rem;
             text-align: center;
-            padding: 1rem 5rem;
         }
     }
 }
@@ -167,6 +177,8 @@ article {
     img {
         border-radius: 10px;
         margin-bottom: 0.4rem;
+        width: 65vw;
+        max-width: 200px;
     }
     h3 {
         margin: 0;
