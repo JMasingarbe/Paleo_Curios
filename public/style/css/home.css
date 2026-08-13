@@ -23,6 +23,7 @@
   }
   main #last_article p:last-of-type {
     text-align: justify;
+    line-height: 1.8;
   }
 }
 @media screen and (max-width: 1280px) and (max-width: 480px) {
@@ -37,7 +38,12 @@
   main .divider {
     align-self: center;
   }
+  main #trend_fossils {
+    display: flex;
+    flex-direction: column;
+  }
   main #trend_fossils div {
+    align-self: center;
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -66,6 +72,7 @@
 @media screen and (max-width: 1280px) {
   main #random_fossil article#random_fossil_card #random_fossil_description {
     margin: 0.5rem;
+    line-height: 1.8;
   }
 }
 @media screen and (min-width: 1280px) {

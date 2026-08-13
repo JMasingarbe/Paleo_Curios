@@ -139,6 +139,8 @@ header li > a:hover, footer li > a:hover {
   footer nav ul {
     display: grid;
     grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 0;
   }
   footer nav ul div:first-child {
     grid-area: 1;

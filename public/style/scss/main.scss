@@ -147,6 +147,8 @@ header, footer {
         nav ul {
             display: grid;
             grid-template-rows: 1fr 1fr;
+            gap: 1.5rem;
+            padding: 0;
             div:first-child {
                 grid-area: 1;
                 display: flex;

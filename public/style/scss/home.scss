@@ -24,6 +24,7 @@
                 }
                 &:last-of-type {
                     text-align: justify;
+                    line-height: 1.8;
                     @media screen and (max-width: 480px) {
                         text-align: left;
                     }
@@ -37,7 +38,10 @@
             align-self: center;
         }
         #trend_fossils {
+            display: flex;
+            flex-direction: column;
             div {
+                align-self: center;
                 display: inline-flex;
                 flex-wrap: wrap;
                 justify-content: center;
@@ -62,6 +66,7 @@
                 }
                 #random_fossil_description {
                     margin: 0.5rem;
+                    line-height: 1.8;
                 }
             }
         }
