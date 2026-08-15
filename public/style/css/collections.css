@@ -1,0 +1,227 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+main #searchbar_filter img {
+  width: 2rem;
+}
+main #searchbar_filter #searchbar {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 75vw;
+  max-width: 350px;
+  border: solid 2px #1C377E;
+  border-radius: 25px;
+  padding: 0.2rem 0.5rem 0.2rem 0.75rem;
+  margin: 0 0.5rem 0 0;
+  background-color: rgba(28, 55, 126, 0.5);
+}
+main #searchbar_filter #searchbar input {
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.9rem;
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+main #searchbar_filter #searchbar input::placeholder {
+  color: #050100;
+}
+main #searchbar_filter #filters_button {
+  transition: transform 0.2s;
+}
+main form {
+  display: none;
+}
+main form img {
+  width: 1.5rem;
+}
+main form fieldset {
+  width: 75vw;
+  max-width: 450px;
+  border-radius: 25px;
+  border: solid 1px #050100;
+  padding: 0.35rem 1rem 0.625rem 1rem;
+}
+main form fieldset legend {
+  font-weight: bold;
+}
+main form fieldset input, main form fieldset select {
+  background-color: rgb(253.825, 249.83, 244.425);
+  cursor: pointer;
+  border: solid 1px #050100;
+  border-radius: 5px;
+  padding: 0.2rem;
+  font-family: "Source Code Pro", monospace;
+}
+main form fieldset input[type=text] {
+  cursor: text;
+}
+main form fieldset input[type=text]::placeholder {
+  color: rgba(5, 1, 0, 0.75);
+}
+main form fieldset label[for=is_exposed] {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+main form fieldset label[for=is_exposed] #custom_checkbox_exposed {
+  margin: 0 0.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: solid 1px #050100;
+  border-radius: 5px;
+  background-color: rgb(253.825, 249.83, 244.425);
+  position: relative;
+}
+main form fieldset label[for=is_exposed] #custom_checkbox_exposed::after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 3px;
+  left: 6.5px;
+  width: 0.25rem;
+  height: 0.5rem;
+  border: solid rgb(253.825, 249.83, 244.425);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+main form fieldset label[for=is_exposed] #custom_checkbox_exposed:hover {
+  cursor: pointer;
+}
+main form fieldset input[type=checkbox] {
+  display: none;
+}
+main form fieldset input[type=checkbox]:checked + label[for=is_exposed] #custom_checkbox_exposed {
+  background-color: #1C377E;
+}
+main form fieldset input[type=checkbox]:checked + label[for=is_exposed] #custom_checkbox_exposed::after {
+  display: block;
+}
+main form fieldset select {
+  text-align: center;
+}
+main #particulars_collections {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+}
+main #particulars_collections article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main #particulars_collections article img {
+  height: 65vw;
+  max-height: 200px;
+  object-fit: cover;
+}
+main #particulars_collections article {
+  transition: transform 0.2s;
+}
+main #particulars_collections article:hover {
+  transform: scale(1.08);
+}
+main #link_all_collections {
+  text-align: center;
+  transition: transform 0.2s;
+}
+main #link_all_collections:hover {
+  transform: scale(1.2);
+  text-decoration: underline #E7512C;
+}
+main a:last-child {
+  align-self: end;
+  text-align: center;
+}
+
+@media screen and (max-width: 570px) {
+  #filters_button:hover {
+    transform: none;
+  }
+  #searchbar_filter {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+  }
+  #searchbar_filter #filters_button {
+    justify-self: end;
+    margin: 0.75rem 1rem 0 0;
+  }
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+  }
+  fieldset #closing_filters {
+    align-self: end;
+  }
+  fieldset select, fieldset input {
+    width: 80vw;
+    max-width: 350px;
+  }
+  fieldset #submit_filters_button {
+    align-self: center;
+  }
+  #link_all_collections {
+    text-decoration: underline #E7512C;
+  }
+}
+@media screen and (min-width: 571px) {
+  #searchbar_filter {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 0 1rem 0;
+  }
+  #searchbar_filter #filters_button:hover {
+    transform: scale(1.2);
+  }
+  fieldset {
+    display: grid;
+    grid-template: repeat(4, 1fr)/1fr 2fr;
+    justify-items: center;
+    align-items: center;
+    column-gap: 0.5rem;
+  }
+  fieldset div {
+    display: inline;
+  }
+  fieldset #closing_filters {
+    grid-area: 1/span 2;
+    justify-self: end;
+    transition: transform 0.2s;
+  }
+  fieldset #closing_filters:hover {
+    transform: scale(1.2);
+  }
+  fieldset #dropdown_collection {
+    grid-area: 3/1;
+    width: 100%;
+    display: grid;
+    grid-template: 1fr 1fr/1fr;
+    place-items: center;
+  }
+  fieldset #dropdown_collection label {
+    justify-self: start;
+  }
+  fieldset #submit_filters_button {
+    grid-area: 4/span 2;
+    justify-self: end;
+    margin-right: 2rem;
+  }
+}
+
+/*# sourceMappingURL=collections.css.map */

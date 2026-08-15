@@ -7,6 +7,6 @@ phone_nav_button.addEventListener('click', ()=> {
     ul_main_nav.style.display === 'none' || ul_main_nav.style.display === '' ? ul_main_nav.style.display = 'block' : ul_main_nav.style.display = 'none';
     // Toggle menu icon animation
     for (menu_icon of menu_icons) {
-        menu_icon.classList.toggle('change');
+        menu_icon.classList.toggle('menu_icon_animation');
     }
 })

@@ -29,11 +29,16 @@ header img, footer img {
 header ul, footer ul {
   list-style: none;
 }
-header li > a, footer li > a {
+header ul li, footer ul li {
+  transition: transform 0.2s;
+}
+header ul li a, footer ul li a {
   color: #FAE9D2;
 }
-header li > a:hover, footer li > a:hover {
-  font-size: 1.2rem;
+header ul li:hover, footer ul li:hover {
+  transform: scale(1.2);
+}
+header ul li:hover a, footer ul li:hover a {
   text-decoration-color: #E7512C;
   text-decoration-line: underline;
 }
@@ -51,14 +56,16 @@ header li > a:hover, footer li > a:hover {
   header #phone_nav_button {
     grid-area: 1/2;
     justify-self: end;
-    width: 4rem;
+    width: 50vw;
+    max-width: 4rem;
     height: 4rem;
     cursor: pointer;
     background-color: #050100;
     border: none;
   }
   header #phone_nav_button div {
-    width: 4rem;
+    width: 50vw;
+    max-width: 4rem;
     height: 0.4rem;
     border-radius: 3px;
     background-color: #FAE9D2;
@@ -66,19 +73,19 @@ header li > a:hover, footer li > a:hover {
     transition: 0.4s;
     /* Rotate first bar */
   }
-  header #phone_nav_button div:nth-child(1).change {
+  header #phone_nav_button div:nth-child(1).menu_icon_animation {
     transform: translate(0, 0.45rem) rotate(-45deg);
   }
   header #phone_nav_button div {
     /* Fade out the second bar */
   }
-  header #phone_nav_button div:nth-child(2).change {
+  header #phone_nav_button div:nth-child(2).menu_icon_animation {
     display: none;
   }
   header #phone_nav_button div {
     /* Rotate last bar */
   }
-  header #phone_nav_button div:nth-child(3).change {
+  header #phone_nav_button div:nth-child(3).menu_icon_animation {
     transform: translate(0, -0.45rem) rotate(45deg);
   }
   header nav {
@@ -192,11 +199,12 @@ article p {
   color: #FAE9D2;
   background-color: #1C377E;
   border-radius: 7.5px;
+  transition: transform 0.2s;
 }
 .link_button:hover {
   box-shadow: 0.3rem 0.3rem rgba(5, 1, 0, 0.25);
   text-decoration: none;
-  font-size: 1.05rem;
+  transform: scale(1.05);
 }
 
 .sec_link_button {
@@ -204,11 +212,12 @@ article p {
   background-color: rgba(231, 81, 44, 0.5);
   border: solid 1.5px #E7512C;
   border-radius: 7.5px;
+  transition: transform 0.2s;
 }
 .sec_link_button:hover {
   box-shadow: 0.3rem 0.3rem rgba(5, 1, 0, 0.25);
   text-decoration: none;
-  font-size: 1.05rem;
+  transform: scale(1.05);
 }
 
 .breadcrumbs {
@@ -225,7 +234,9 @@ article p {
   font-weight: 625;
 }
 .breadcrumbs li a:hover {
-  font-size: 1rem;
+  transform: scale(1);
+}
+.breadcrumbs li a:hover a {
   text-decoration-color: #E7512C;
   text-decoration-line: underline;
 }

@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Amarante&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/css/main.css">
+    <link rel="stylesheet" href="../style/css/collections.css">
     <title>Paléo Curios - Collections</title>
 </head>
 
@@ -34,19 +35,23 @@
     <!-- Main -->
     <main>
         <!-- Search bar & filter button -->
-        <input type="search" id="searchbar" name="searchbar" placeholder="Rechercher">
-        <button type="button">Icon filtre</button>
-
+        <div id="searchbar_filter">
+            <div id="searchbar">
+                <input type="search" id="searchbar_input" name="searchbar_input" placeholder="Rechercher" aria-label="Champ de recherche">
+                <button type="button" aria-label="Bouton de recherche"><img src="../../src/asset/icons/noun-search-2738105.png" alt="Icône de recherche"></button>
+            </div>
+            <button type="button" id="filters_button" aria-label="Bouton d'affichage des filtres de recherche"><img src="../../src/asset/icons/noun-filter-5208249.png" alt="Icône de filtrage"></button>
+        </div>
         <!-- Filter -->
-        <form action="#" method="post">
+        <form action="" method="post">
             <fieldset>
-                <h3>Filtres :</h3>
-                <button type="button">Icon X</button>
+                <legend>Filtres :</legend>
+                <button type="button" id="closing_filters"><img src="../../src/asset/icons/noun-close-75759.png" alt="Icône de fermeture"></button>
                 
-                <!-- Checkbox is exposed ? -->
+                <!-- Checkbox: fossil is exposed ? -->
                 <div>
-                    <input type="checkbox" name="exposed" id="exposed">
-                    <label for="exposed">Exposé</label>
+                    <input type="checkbox" name="is_exposed" id="is_exposed">
+                    <label for="is_exposed"><div id="custom_checkbox_exposed"></div> Exposé</label>
                 </div>
 
                 <!-- Dropdown continent -->
@@ -65,9 +70,9 @@
                 </div>
 
                 <!-- Dropdown collection -->
-                <div>
-                    <label for="collection">Collection :</label>
-                    <select name="collection" id="collection">
+                <div id="dropdown_collection">
+                    <label for="chosed_collection">Collection :</label>
+                    <select name="chosed_collection" id="chosed_collection">
                         <option value="all_collections">Toutes</option>
                         <option value="vertebrate">Vertébrés</option>
                         <option value="intebrate">Invertébrés</option>
@@ -83,47 +88,49 @@
                     <input type="text" name="search_country" id="search_country" placeholder="Pays">
                 </div>
 
-                <button type="submit"><a href="collection.html">Appliquer</a></button>
+                <button type="submit" href="collection.html" id="submit_filters_button" class="sec_link_button">Appliquer</button>
             </fieldset>
         </form>
 
         <!-- Collections -->
-        <a href="collection.html">
-            <div>
-                <img src="https://placehold.co/200" alt="Photo de la collection des fossiles de vertébrés">
-                <h2>Vertébrés</h2>
-            </div>
-        </a>
+        <section id="particulars_collections">
+            <a href="collection.html">
+                <article>
+                    <img src="../../src/asset/pictures/Archaeopteryx_lithographica_(Berlin_specimen).jpg" alt="Photo de la collection des fossiles de vertébrés">
+                    <h2>Vertébrés</h2>
+                </article>
+            </a>
+    
+            <a href="collection.html">
+                <article>
+                    <img src="../../src/asset/pictures/Alokistocare_sp_4.JPG" alt="Photo de la collection des fossiles de invertébrés">
+                    <h2>Invertébrés</h2>
+                </article>
+            </a>
+    
+            <a href="collection.html">
+                <article>
+                    <img src="../../src/asset/pictures/Meganeura_monyi_au_Museum_de_Toulouse.jpg" alt="Photo de la collection des fossiles de insectes">
+                    <h2>Insectes</h2>
+                </article>
+            </a>
+    
+            <a href="collection.html">
+                <article>
+                    <img src="../../src/asset/pictures/" alt="Photo de la collection des fossiles de plantes">
+                    <h2>Plantes</h2>
+                </article>
+            </a>
+    
+            <a href="collection.html">
+                <article>
+                    <img src="../../src/asset/pictures/il_1588xN.3078041578_40cs.webp" alt="Photo de la collection des autres fossiles">
+                    <h2>Autres</h2>
+                </article>
+            </a>
+        </section>
 
-        <a href="collection.html">
-            <div>
-                <img src="https://placehold.co/200" alt="Photo de la collection des fossiles de invertébrés">
-                <h2>Invertébrés</h2>
-            </div>
-        </a>
-
-        <a href="collection.html">
-            <div>
-                <img src="https://placehold.co/200" alt="Photo de la collection des fossiles de insectes">
-                <h2>Insectes</h2>
-            </div>
-        </a>
-
-        <a href="collection.html">
-            <div>
-                <img src="https://placehold.co/200" alt="Photo de la collection des fossiles de plantes">
-                <h2>Plantes</h2>
-            </div>
-        </a>
-
-        <a href="collection.html">
-            <div>
-                <img src="https://placehold.co/200" alt="Photo de la collection des autres fossiles">
-                <h2>Autres</h2>
-            </div>
-        </a>
-
-        <a href="collection.html"><h2>Toute les collections</h2></a>
+        <a href="collection.html" id="link_all_collections"><h2>Toutes les collections</h2></a>
 
         <a href="statistics.html" class="link_button">Statistiques générales</a>
     </main>
@@ -149,5 +156,6 @@
 
     <!-- Scripts -->
     <script src="../../src/script/main.js"></script>
+    <script src="../../src/script/collections.js"></script>
 </body>
 </html>
