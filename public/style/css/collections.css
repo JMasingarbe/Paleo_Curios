@@ -11,7 +11,7 @@ main button {
   display: grid;
   place-items: center;
 }
-main #searchbar_filter img {
+main button img {
   width: 2rem;
 }
 main #searchbar_filter #searchbar {

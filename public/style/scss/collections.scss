@@ -1,6 +1,5 @@
 @use 'sass:color';
 @use './variables' as *;
-@use './mixins' as m;
 
 main {
     display: flex;
@@ -14,12 +13,12 @@ main {
         text-align: center;
         display: grid;
         place-items: center;
-    }
-    
-    #searchbar_filter {
         img {
             width: 2rem;
         }
+    }
+    
+    #searchbar_filter {
         
         #searchbar {
             display: flex;

@@ -1,0 +1,238 @@
+@use 'sass:color';
+@use './variables' as *;
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .breadcrumbs  {
+        align-self: start;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        a {
+            display: inline-block;
+            transition: transform 0.2s;
+            &:hover {
+                transform: scale(1.1);
+                text-decoration: underline $accent-color;
+            }
+        }
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        display: grid;
+        place-items: center;
+        img {
+            width: 2rem;
+        }
+    }
+    #searchbar_filters {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        place-items: center;
+    }
+    #searchbar {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+            
+        width: 75vw;
+        max-width: 350px;
+        border: solid 2px $sec-accent-color;
+        border-radius: 25px;
+        padding: 0.2rem 0.5rem 0.2rem 0.75rem;
+        margin: 0 0.5rem 0 0;
+        background-color: color.scale($sec-accent-color, $alpha: -50%);
+        input {
+            font-family: $font;
+            font-size: 0.9rem;
+            background-color: transparent;
+            border: none;
+                
+            height: 100%;
+            width: 100%;
+            &::placeholder {
+                color: $dark-color;
+            }
+        }
+    }
+
+    fieldset {    
+        width: 75vw;
+        max-width: 325px;
+        border-radius: 25px;
+        border: solid 1px $dark-color;
+        padding: 0.35rem 1rem 0.625rem 1rem;
+            
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 0.5rem;
+        legend {
+            font-weight: bold;
+        }
+
+        div:first-of-type {
+            align-self: end;
+            margin-right: 0.5rem;
+        }
+            
+        input, select {
+            background-color: color.adjust($light-color, $lightness: 7.5%);
+            cursor: pointer;
+            border: solid 1px $dark-color;
+            border-radius: 5px;
+            padding: 0.2rem;
+            font-family: $font;
+        }
+
+        label[for="is_exposed"] {
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            #custom_checkbox_exposed {
+                margin: 0 0.25rem;
+                width: 1.25rem;
+                height: 1.25rem;
+                border: solid 1px $dark-color;
+                border-radius: 5px;
+                background-color: color.adjust($light-color, $lightness: 7.5%);
+                    
+                position: relative;
+                &::after {
+                    content: "";
+                    display: none;
+                    position: absolute;
+                    top: 3px;
+                    left: 6.5px;
+                    width: 0.25rem;
+                    height: 0.5rem;
+                    border: solid color.adjust($light-color, $lightness: 7.5%);
+                    border-width: 0 3px 3px 0;
+                    transform: rotate(45deg);
+                }
+                    
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        input[type="checkbox"] {
+            display: none;
+            &:checked + label[for="is_exposed"] {
+                #custom_checkbox_exposed {
+                    background-color: $sec-accent-color;
+                    &::after {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        input[type="text"] {
+            cursor: text;
+            &::placeholder {
+                color: color.scale($dark-color, $alpha: -25%);
+            }
+        }
+            
+        select {
+            text-align: center;
+        }
+
+        #submit_filters_button {
+            align-self: end;
+        }
+    }
+
+    #trend_fossils div, #collection_fossils {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #collection_fossils_title {
+        align-self: start;
+        margin-left: 5vw;
+    }
+    #collection_fossils {
+        max-width: 1200px;
+    }
+
+    .catalogue_nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 1rem 0.2rem 0 0.2rem;
+        span {
+            margin-top: 0.1rem;
+        }
+        button {
+            font-size: 1.5rem;
+            font-weight: bold;
+            img {
+                width: 1.5rem;
+            }
+            transition: transform 0.2s;
+            &:hover {
+                transform: scale(1.2);
+                text-decoration: underline $accent-color;
+            }
+        }
+        #back_buttons, #page_indicators, #next_buttons {
+            display: inline-flex;
+        }
+    }
+}
+
+@media screen and (max-width: 315px) {
+    .catalogue_nav {
+        flex-direction: column;
+        align-items: center;
+        div {
+            margin: 0.5rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1425px) {
+    main {
+        display: grid;
+        grid-template: 2% 17% 2% 1fr 2% / 35% 5% 1fr;
+        place-items: center;
+    
+        .breadcrumbs {
+            grid-area: 1 / span 3;
+            justify-self: start;
+        }
+        #searchbar_filters {
+            grid-area: 2 / 1;
+        }
+        .divider {
+            rotate: 90deg;
+            max-width: 300px;
+            grid-area: 2 / 2;
+        }
+        #trend_fossils {
+            grid-area: 2 / 3;
+        }
+        #collection_fossils_title {
+            grid-area: 3 / span 3;
+            justify-self: start;
+            margin-top: 0.5rem;
+            margin-left: 10vw;
+        }
+        #collection_fossils {
+            grid-area: 4 / span 3;
+        }
+        .catalogue_nav {
+            grid-area: 5 / span 3;
+        }
+    }
+}

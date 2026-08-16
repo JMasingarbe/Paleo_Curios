@@ -6,13 +6,14 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Amarante&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/css/main.css">
+    <link rel="stylesheet" href="../style/css/collection.css">
     <title>Paléo Curios - Nom de la collection</title>
 </head>
 
 <body>
     <!-- Header -->
     <header>
-        <img src="../../src/asset/temporary-logo.png" alt="Logo de Paléo Curios">
+        <img src="../../src/asset/noun-dragonfly-1455556.png" alt="Logo de Paléo Curios">
         <!-- phone menu's button -->
         <button type="button" id="phone_nav_button">
             <div></div>
@@ -39,192 +40,310 @@
             <li>Collection</li>
         </ul>
 
-        <h1>Collection visitée</h1>
+        <div id="searchbar_filters">
+            <!-- Search bar -->
+            <div id="searchbar">
+                <input type="search" id="searchbar_input" name="searchbar_input" placeholder="Rechercher" aria-label="Champ de recherche" maxlength="150">
+                <button type="button" aria-label="Bouton de recherche"><img src="../../src/asset/icons/noun-search-2738105.png" alt="Icône de recherche"></button>
+            </div>
+            <!-- Filter -->
+            <form action="" method="post">
+                <fieldset>
+                    <legend>Filtres :</legend>
+                    
+                    <!-- Checkbox: fossil is exposed ? -->
+                    <div>
+                        <input type="checkbox" name="is_exposed" id="is_exposed">
+                        <label for="is_exposed"><div id="custom_checkbox_exposed"></div> Exposé</label>
+                    </div>
+    
+                    <!-- Dropdown continent -->
+                    <div>
+                        <label for="continent">Continent :</label>
+                        <select name="continent" id="continent">
+                            <option value="none_continent">Aucun sélectionné</option>
+                            <option value="africa">Afrique</option>
+                            <option value="north_america">Amérique du Nord</option>
+                            <option value="south_america">Amérique du Sud</option>
+                            <option value="antartica">Antarctique</option>
+                            <option value="asia">Asie</option>
+                            <option value="europa">Europe</option>
+                            <option value="oceania">Océanie</option>
+                        </select>
+                    </div>
+    
+                    <!-- Dropdown collection -->
+                    <div id="dropdown_collection">
+                        <label for="chosed_collection">Collection :</label>
+                        <select name="chosed_collection" id="chosed_collection">
+                            <option value="all_collections">Toutes</option>
+                            <option value="vertebrate">Vertébrés</option>
+                            <option value="intebrate">Invertébrés</option>
+                            <option value="insect">Insectes</option>
+                            <option value="plant">Plantes</option>
+                            <option value="other_fossils">Autres</option>
+                        </select>
+                    </div>
+    
+                    <!-- Search country -->
+                    <div>
+                        <label for="search_country">Pays :</label>
+                        <input type="text" name="search_country" id="search_country" placeholder="Pays" maxlength="50">
+                    </div>
+    
+                    <button type="button" href="collection.html" id="submit_filters_button" class="sec_link_button">Appliquer</button>
+                </fieldset>
+            </form>
+        </div>
 
-        <!-- Search bar -->
-        <input type="search" id="searchbar" name="searchbar" placeholder="Rechercher">
-
-        <!-- Filter -->
-        <form action="#" method="post">
-            <fieldset>
-                <h3>Filtres :</h3>
-                <button type="button">Icon X</button>
-                
-                <!-- Checkbox is exposed ? -->
-                <div>
-                    <input type="checkbox" name="exposed" id="exposed">
-                    <label for="exposed">Exposé</label>
-                </div>
-
-                <!-- Dropdown continent -->
-                <div>
-                    <label for="continent">Continent :</label>
-                    <select name="continent" id="continent">
-                        <option value="none_continent">Aucun sélectionné</option>
-                        <option value="africa">Afrique</option>
-                        <option value="north_america">Amérique du Nord</option>
-                        <option value="south_america">Amérique du Sud</option>
-                        <option value="antartica">Antarctique</option>
-                        <option value="asia">Asie</option>
-                        <option value="europa">Europe</option>
-                        <option value="oceania">Océanie</option>
-                    </select>
-                </div>
-
-                <!-- Search country -->
-                <div>
-                    <label for="search_country">Pays :</label>
-                    <input type="text" name="search_country" id="search_country" placeholder="Pays">
-                </div>
-
-                <button type="submit">Appliquer</button>
-            </fieldset>
-        </form>
+        <div class="divider"></div>
 
         <!-- Collection's trend fossils -->
-        <section>
+        <section id="trend_fossils">
             <h2>Les fossiles tendances de la collection</h2>
-            <a href="fossil.html">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.html">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.html">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
+            <div>
+                <a href="fossil.html">
+                    <article>
+                        <img src="https://placehold.co/200" alt="Photo du fossile">
+                        <h3>Nom du fossile</h3>
+                        <p>Datation</p>
+                    </article>
+                </a>
+    
+                <a href="fossil.html">
+                    <article>
+                        <img src="https://placehold.co/200" alt="Photo du fossile">
+                        <h3>Nom du fossile</h3>
+                        <p>Datation</p>
+                    </article>
+                </a>
+    
+                <a href="fossil.html">
+                    <article>
+                        <img src="https://placehold.co/200" alt="Photo du fossile">
+                        <h3>Nom du fossile</h3>
+                        <p>Datation</p>
+                    </article>
+                </a>
+            </div>
         </section>
 
         <!-- Collection's fossils -->
-        <h3>Les fossiles de la collection :</h3>
+        <h2 id="collection_fossils_title">Les fossiles de la collection :</h2>
 
-            <!-- 13 fossils cards -->
-        <a href="fossil.html">
-            <article>
-                <img src="https://placehold.co/200" alt="Photo du fossile">
-                <h3>Nom du fossile</h3>
-                <p>Datation</p>
-            </article>
-        </a>
+        <div id="collection_fossils">
 
-        <a href="fossil.html">
-            <article>
-                <img src="https://placehold.co/200" alt="Photo du fossile">
-                <h3>Nom du fossile</h3>
-                <p>Datation</p>
-            </article>
-        </a>
+            <!-- 24 fossils cards -->
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
 
-        <a href="fossil.html">
-            <article>
-                <img src="https://placehold.co/200" alt="Photo du fossile">
-                <h3>Nom du fossile</h3>
-                <p>Datation</p>
-            </article>
-        </a>
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
 
-        <a href="fossil.html">
-            <article>
-                <img src="https://placehold.co/200" alt="Photo du fossile">
-                <h3>Nom du fossile</h3>
-                <p>Datation</p>
-            </article>
-        </a>
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
 
-        <a href="fossil.html">
-            <article>
-                <img src="https://placehold.co/200" alt="Photo du fossile">
-                <h3>Nom du fossile</h3>
-                <p>Datation</p>
-            </article>
-        </a>
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
 
-        <a href="fossil.html">
-            <article>
-                <img src="https://placehold.co/200" alt="Photo du fossile">
-                <h3>Nom du fossile</h3>
-                <p>Datation</p>
-            </article>
-        </a>
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
 
-        <a href="fossil.html">
-            <article>
-                <img src="https://placehold.co/200" alt="Photo du fossile">
-                <h3>Nom du fossile</h3>
-                <p>Datation</p>
-            </article>
-        </a>
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
 
-        <a href="fossil.html">
-            <article>
-                <img src="https://placehold.co/200" alt="Photo du fossile">
-                <h3>Nom du fossile</h3>
-                <p>Datation</p>
-            </article>
-        </a>
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
 
-        <a href="fossil.html">
-            <article>
-                <img src="https://placehold.co/200" alt="Photo du fossile">
-                <h3>Nom du fossile</h3>
-                <p>Datation</p>
-            </article>
-        </a>
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
 
-        <a href="fossil.html">
-            <article>
-                <img src="https://placehold.co/200" alt="Photo du fossile">
-                <h3>Nom du fossile</h3>
-                <p>Datation</p>
-            </article>
-        </a>
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
 
-        <a href="fossil.html">
-            <article>
-                <img src="https://placehold.co/200" alt="Photo du fossile">
-                <h3>Nom du fossile</h3>
-                <p>Datation</p>
-            </article>
-        </a>
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
 
-        <a href="fossil.html">
-            <article>
-                <img src="https://placehold.co/200" alt="Photo du fossile">
-                <h3>Nom du fossile</h3>
-                <p>Datation</p>
-            </article>
-        </a>
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
 
-        <a href="fossil.html">
-            <article>
-                <img src="https://placehold.co/200" alt="Photo du fossile">
-                <h3>Nom du fossile</h3>
-                <p>Datation</p>
-            </article>
-        </a>
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
+
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
+
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
+
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
+
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
+
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
+
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
+
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
+
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
+
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
+
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
+
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
+
+            <a href="fossil.html">
+                <article>
+                    <img src="https://placehold.co/200" alt="Photo du fossile">
+                    <h3>Nom du fossile</h3>
+                    <p>Datation</p>
+                </article>
+            </a>
+        </div>
 
         <!-- Page nav -->
         <div class="catalogue_nav">
-            <button type="button"><-</button>
-            <button type="button">1</button>
-            <button type="button">2</button>
-            <button type="button">3</button>
-            <span>...</span>
-            <button type="button">-></button>
+            <div id="back_buttons">
+                <button type="button"><img src="../../src/asset/icons/noun-chevron-left-4213614.png" alt="Icône "></button>
+                <button type="button"><img src="../../src/asset/icons/noun-arrow-back-4971230.png" alt="Icône "></button>
+            </div>
+            <div id="page_indicators">
+                <span>...</span>
+                <button type="button">1</button>
+                <button type="button">2</button>
+                <button type="button">3</button>
+                <span>...</span>
+            </div>
+            <div id="next_buttons">
+                <button type="button"><img src="../../src/asset/icons/noun-arrow-next-4971211.png" alt="Icône "></button>
+                <button type="button"><img src="../../src/asset/icons/noun-chevron-right-4213616.png" alt="Icône "></button>
+            </div>
         </div>
     </main>
 

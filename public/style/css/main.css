@@ -24,7 +24,9 @@ header, footer {
   font-family: "Source Code Pro", monospace;
 }
 header img, footer img {
-  height: 10vh;
+  width: 10vw;
+  min-width: 60px;
+  max-width: 100px;
 }
 header ul, footer ul {
   list-style: none;
@@ -93,6 +95,7 @@ header ul li:hover a, footer ul li:hover a {
   }
   header nav ul {
     display: none;
+    flex-direction: column;
     padding: 0.1rem 0 0.1rem 0;
     margin-bottom: 0.4rem;
     background-color: #FAE9D2;
@@ -185,9 +188,15 @@ article h3 {
 article p {
   margin: 0.25rem;
 }
+article {
+  transition: transform 0.2s;
+}
+article:hover {
+  transform: scale(1.0125);
+}
 
 .divider {
-  width: 45vw;
+  width: 60vw;
   max-width: 550px;
   height: 0.2rem;
   background-color: #1C377E;
