@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../src/asset/favicon/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Amarante&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/css/main.css">
     <link rel="stylesheet" href="../style/css/collections.css">
@@ -13,7 +13,7 @@
 <body>
     <!-- Header -->
     <header>
-        <img src="../../src/asset/temporary-logo.png" alt="Logo de Paléo Curios">
+        <img src="../../src/asset/noun-dragonfly-1455556.png" alt="Logo de Paléo Curios">
         <!-- phone menu's button -->
         <button type="button" id="phone_nav_button">
             <div></div>
@@ -43,7 +43,7 @@
             <button type="button" id="filters_button" aria-label="Bouton d'affichage des filtres de recherche"><img src="../../src/asset/icons/noun-filter-5208249.png" alt="Icône de filtrage"></button>
         </div>
         <!-- Filter -->
-        <form action="" method="post">
+        <form action="#" method="get">
             <fieldset>
                 <legend>Filtres :</legend>
                 <button type="button" id="closing_filters"><img src="../../src/asset/icons/noun-close-75759.png" alt="Icône de fermeture"></button>
@@ -71,11 +71,11 @@
 
                 <!-- Dropdown collection -->
                 <div id="dropdown_collection">
-                    <label for="chosed_collection">Collection :</label>
-                    <select name="chosed_collection" id="chosed_collection">
+                    <label for="select_collection">Collection :</label>
+                    <select name="select_collection" id="select_collection">
                         <option value="all_collections">Toutes</option>
                         <option value="vertebrate">Vertébrés</option>
-                        <option value="intebrate">Invertébrés</option>
+                        <option value="invertebrate">Invertébrés</option>
                         <option value="insect">Insectes</option>
                         <option value="plant">Plantes</option>
                         <option value="other_fossils">Autres</option>
@@ -94,35 +94,35 @@
 
         <!-- Collections -->
         <section id="particulars_collections">
-            <a href="collection.html">
+            <a href="collection.html" id="vertebrate">
                 <article>
                     <img src="../../src/asset/pictures/Archaeopteryx_lithographica_(Berlin_specimen).jpg" alt="Photo de la collection des fossiles de vertébrés">
                     <h2>Vertébrés</h2>
                 </article>
             </a>
     
-            <a href="collection.html">
+            <a href="collection.html" id="invertebrate">
                 <article>
                     <img src="../../src/asset/pictures/Alokistocare_sp_4.JPG" alt="Photo de la collection des fossiles de invertébrés">
                     <h2>Invertébrés</h2>
                 </article>
             </a>
     
-            <a href="collection.html">
+            <a href="collection.html" id="insect">
                 <article>
                     <img src="../../src/asset/pictures/Meganeura_monyi_au_Museum_de_Toulouse.jpg" alt="Photo de la collection des fossiles de insectes">
                     <h2>Insectes</h2>
                 </article>
             </a>
     
-            <a href="collection.html">
+            <a href="collection.html" id="plant">
                 <article>
                     <img src="../../src/asset/pictures/Caesalpina_eocenica_322.jpg" alt="Photo de la collection des fossiles de plantes">
                     <h2>Plantes</h2>
                 </article>
             </a>
     
-            <a href="collection.html">
+            <a href="collection.html" id="other_fossils">
                 <article>
                     <img src="../../src/asset/pictures/il_1588xN.3078041578_40cs.webp" alt="Photo de la collection des autres fossiles">
                     <h2>Autres</h2>

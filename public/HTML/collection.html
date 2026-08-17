@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../src/asset/favicon/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Amarante&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/css/main.css">
     <link rel="stylesheet" href="../style/css/collection.css">
-    <title>Paléo Curios - Nom de la collection</title>
+    <title>Toutes les Collections - Paléo Curios</title>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
         <!-- Breadcrumbs -->
         <ul class="breadcrumbs">
             <li><a href="collections.html">Collections</a></li>
-            <li>Collection</li>
+            <li>Toutes les Collections</li>
         </ul>
 
         <div id="searchbar_filters">
@@ -47,7 +47,7 @@
                 <button type="button" aria-label="Bouton de recherche"><img src="../../src/asset/icons/noun-search-2738105.png" alt="Icône de recherche"></button>
             </div>
             <!-- Filter -->
-            <form action="" method="post">
+            <form action="#" method="get">
                 <fieldset>
                     <legend>Filtres :</legend>
                     
@@ -74,11 +74,11 @@
     
                     <!-- Dropdown collection -->
                     <div id="dropdown_collection">
-                        <label for="chosed_collection">Collection :</label>
-                        <select name="chosed_collection" id="chosed_collection">
+                        <label for="select_collection">Collection :</label>
+                        <select name="select_collection" id="select_collection">
                             <option value="all_collections">Toutes</option>
                             <option value="vertebrate">Vertébrés</option>
-                            <option value="intebrate">Invertébrés</option>
+                            <option value="invertebrate">Invertébrés</option>
                             <option value="insect">Insectes</option>
                             <option value="plant">Plantes</option>
                             <option value="other_fossils">Autres</option>
@@ -91,7 +91,7 @@
                         <input type="text" name="search_country" id="search_country" placeholder="Pays" maxlength="50">
                     </div>
     
-                    <button type="button" href="collection.html" id="submit_filters_button" class="sec_link_button">Appliquer</button>
+                    <button type="submit" id="submit_filters_button" class="sec_link_button">Appliquer</button>
                 </fieldset>
             </form>
         </div>
@@ -368,5 +368,6 @@
 
     <!-- Scripts -->
     <script src="../../src/script/main.js"></script>
+    <script type="module" src="../../src/script/collection.js"></script>
 </body>
 </html>
