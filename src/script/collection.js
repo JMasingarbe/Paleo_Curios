@@ -5,6 +5,7 @@ function changing_tab_breadcrumbs() {
 
     // localStorage value for 'chosed_collection'
     const saved_collections = localStorage.getItem('chosed_collection');
+    // Change tab and breadcrumb 's title depending on chosed collection
     switch (saved_collections) {
         case "vertebrate" :
             tab_title.innerText = (`Vertébrés - Paléo Curios`);
@@ -39,7 +40,7 @@ const chosed_collection = document.querySelector('#select_collection');
 const search_country = document.querySelector('#search_country');
 const form_filters = document.querySelector('#searchbar_filters form');
 
-// If filters was applied retrieve them in filter
+// If filters were applied retrieve them in filter
 if (localStorage.getItem('is_exposed') === 'true') {
     is_exposed.checked = true;
 }
@@ -58,7 +59,7 @@ submit_filters_button.addEventListener('click', ()=> {
     // Save in localStorage all filters
     localStorage.setItem('is_exposed', is_exposed.checked);
     localStorage.setItem('continent', continent.value);
-    localStorage.setItem('chosed_collection', select_collection.value);
+    localStorage.setItem('chosed_collection', chosed_collection.value);
     localStorage.setItem('search_country', search_country.value);
     // Refresh tab and breadcrumb's page title
     changing_tab_breadcrumbs();
@@ -69,23 +70,26 @@ submit_filters_button.addEventListener('click', ()=> {
 Array of objects :
 fossil {
 id: ,
-published_date: , => ISO format
-name: , => name in owner's collection
-species: null {name: , link: null}, => if not null then name and wikipedia link if it exist
-collection: , => all_collections ; vertebrate ; invertebrate ; insect ; plant ; other_fossils
+published_date: ,                       => ISO format
+name: ,                                 => name in owner's collection
+species: null {name: , link: null},     => if not null then name and wikipedia link if it exist
+collection: ,                           => all_collections ; vertebrate ; invertebrate ; insect ; plant ; other_fossils
 description: ,
-is_exposed: null, => null or museum name
+is_exposed: null,                       => null or museum name
 fossil_type: ,
-dating: , => number and noted in Ma (=million years ago)
-continent: , => none_continent ; africa ; north_america ; south_america ; antartica ; asia ; europa ; oceania
+dating: ,                               => number and noted in Ma (=million years ago)
+continent: ,                            => none_continent ; africa ; north_america ; south_america ; antartica ; asia ; europa ; oceania
 extraction_site: ,
-researchable: bool, => if true then owner !== nul
+researchable: bool,                     => if true then owner !== nul
 owner: null {name: , email: },
 number_click: 
 }
 */
 
+// Importing pseudo fossils db
 import { fossils_db } from "./fossils_db.js";
+
+// Array stocking filtered fossils
 const filtered_fossils = [];
 
 //  Vertebres > invertebres > plantes > autres > insectes
@@ -107,7 +111,6 @@ if (localStorage.getItem('continent') !== "none_continent") {
     // Does fossils_db has already been sorted ?
     if (filtered_fossils.length !== 0) {
         for (let i=0 ; i < filtered_fossils.length ; i++) {
-            console.log(filtered_fossils[i]);
             if (filtered_fossils[i]["continent"] != localStorage.getItem('continent')) {
                 filtered_fossils.splice(i, 1);
                 i--;
@@ -128,7 +131,6 @@ if (localStorage.getItem('chosed_collection') !== "all_collections") {
     // Does fossils_db has already been sorted ?
     if (filtered_fossils.length !== 0) {
         for (let i=0 ; i < filtered_fossils.length ; i++) {
-            console.log(filtered_fossils[i]);
             if (filtered_fossils[i]["collection"] != localStorage.getItem('chosed_collection')) {
                 filtered_fossils.splice(i, 1);
                 i--;
@@ -143,4 +145,44 @@ if (localStorage.getItem('chosed_collection') !== "all_collections") {
         }
     }
 }
-console.log(filtered_fossils);
+
+
+//////// Changing fossil's card name depending if there's filters
+// Elements containing fossil's name of all cards
+const fossils_cards = document.querySelectorAll('#collection_fossils a');
+const fossils_cards_name = document.querySelectorAll('#collection_fossils a article h3');
+const fossils_cards_dating = document.querySelectorAll('#collection_fossils a article p');
+const fossils_notfound = document.querySelector('#collection_fossils h1');
+
+// If there's filter then use filtered fossils datas else use all database
+if (filtered_fossils.length > 0) {
+    // Finding if filtered is smaller than the number of cards
+    let smallest_length = 0;
+    filtered_fossils.length > fossils_cards_name.length ? smallest_length = fossils_cards_name.length : smallest_length = filtered_fossils.length;
+    
+    // Changing fossil's cards name and dating
+    for (let i=0 ; i < smallest_length ; i++) {
+        fossils_cards_name[i].innerText = filtered_fossils[i]['name'];
+        fossils_cards_dating[i].innerText = `- ${filtered_fossils[i]['dating']} Ma`;
+    }
+
+    // Hiding overflowing cards
+    for (let i = smallest_length ; i < fossils_cards_name.length ; i++) {
+        fossils_cards[i].style.display = 'none';
+    }
+} else if (localStorage.getItem('is_exposed') === "true" || localStorage.getItem('continent') !== "none_continent" || localStorage.getItem('chosed_collection') !== "all_collections") {
+    // Hiding fossil's cards
+    for (let i = 0 ; i < fossils_cards_name.length ; i++) {
+        fossils_cards[i].style.display = 'none';
+    }
+
+    fossils_notfound.style.display = 'block';
+} else {
+    for (let i=0 ; i < fossils_cards_name.length ; i++) {
+        fossils_cards_name[i].innerText = fossils_db[i]['name'];
+        fossils_cards_dating[i].innerText = `- ${fossils_db[i]['dating']} Ma`;
+    }
+}
+// console.log(fossils_cards_name[0]);
+// console.log(filtered_fossils[i]);
+// console.log(filtered_fossils);

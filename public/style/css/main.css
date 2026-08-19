@@ -175,6 +175,7 @@ article {
   padding: 1rem;
   box-shadow: 0.2rem 0.2rem 0.5rem #E7512C;
   border-radius: 15px 2.5px 15px 2.5px;
+  max-width: 232px;
 }
 article img {
   border-radius: 10px;
@@ -184,9 +185,17 @@ article img {
 }
 article h3 {
   margin: 0;
+  width: 195px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 article p {
   margin: 0.25rem;
+  width: 175px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 article {
   transition: transform 0.2s;
