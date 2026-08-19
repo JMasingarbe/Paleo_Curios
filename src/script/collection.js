@@ -69,25 +69,78 @@ submit_filters_button.addEventListener('click', ()=> {
 Array of objects :
 fossil {
 id: ,
-name: ,
-species: null {name: , link: },
-collection: ,
+published_date: , => ISO format
+name: , => name in owner's collection
+species: null {name: , link: null}, => if not null then name and wikipedia link if it exist
+collection: , => all_collections ; vertebrate ; invertebrate ; insect ; plant ; other_fossils
 description: ,
-is_exposed: ,
+is_exposed: null, => null or museum name
 fossil_type: ,
-dating: ,
-continent: ,
+dating: , => number and noted in Ma (=million years ago)
+continent: , => none_continent ; africa ; north_america ; south_america ; antartica ; asia ; europa ; oceania
 extraction_site: ,
-researchable: bool,
+researchable: bool, => if true then owner !== nul
 owner: null {name: , email: },
 number_click: 
 }
 */
 
 import { fossils_db } from "./fossils_db.js";
-for (const fossil of fossils_db) {
-    if (localStorage.getItem('chosed_collections') !== "all_collections" && localStorage.getItem('chosed_collections') === fossil["collection"]) {
+const filtered_fossils = [];
 
-        console.log(fossil["name"]);
+//  Vertebres > invertebres > plantes > autres > insectes
+// europe > amrc nord > asie > afrique > amrc sud > oceanie > antartique=0
+// 74 is_exposed
+
+// If fossil is exposed
+if (localStorage.getItem('is_exposed') === "true") {
+    // fossils_db can't be sorted before then
+    for (const fossil of fossils_db) {
+        if (fossil["is_exposed"] != null) {
+            filtered_fossils.push(fossil);
+        }
     }
 }
+
+// If a continent was chosed
+if (localStorage.getItem('continent') !== "none_continent") {
+    // Does fossils_db has already been sorted ?
+    if (filtered_fossils.length !== 0) {
+        for (let i=0 ; i < filtered_fossils.length ; i++) {
+            console.log(filtered_fossils[i]);
+            if (filtered_fossils[i]["continent"] != localStorage.getItem('continent')) {
+                filtered_fossils.splice(i, 1);
+                i--;
+            }
+        }
+    } else {
+        // fossils_db hasn't been sorted before then
+        for (const fossil of fossils_db) {
+            if (localStorage.getItem('continent') === fossil["continent"]) {
+                filtered_fossils.push(fossil);
+            }
+        }
+    }
+}
+
+// If a collection was chosed
+if (localStorage.getItem('chosed_collection') !== "all_collections") {
+    // Does fossils_db has already been sorted ?
+    if (filtered_fossils.length !== 0) {
+        for (let i=0 ; i < filtered_fossils.length ; i++) {
+            console.log(filtered_fossils[i]);
+            if (filtered_fossils[i]["collection"] != localStorage.getItem('chosed_collection')) {
+                filtered_fossils.splice(i, 1);
+                i--;
+            }
+        }
+    } else {
+        // fossils_db hasn't been sorted before then
+        for (const fossil of fossils_db) {
+            if (localStorage.getItem('chosed_collection') === fossil["collection"]) {
+                filtered_fossils.push(fossil);
+            }
+        }
+    }
+}
+console.log(filtered_fossils);
