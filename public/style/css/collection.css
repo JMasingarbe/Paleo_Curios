@@ -132,6 +132,9 @@ main fieldset select {
 main fieldset #submit_filters_button {
   align-self: end;
 }
+main .divider {
+  justify-self: center;
+}
 main #trend_fossils div, main #collection_fossils {
   display: inline-flex;
   flex-wrap: wrap;

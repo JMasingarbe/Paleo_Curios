@@ -152,6 +152,10 @@ main {
         }
     }
 
+    .divider {
+        justify-self: center;
+    }
+
     #trend_fossils div, #collection_fossils {
         display: inline-flex;
         flex-wrap: wrap;
