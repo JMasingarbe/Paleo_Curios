@@ -181,37 +181,21 @@ main .catalogue_nav #back_buttons, main .catalogue_nav #page_indicators, main .c
   }
 }
 @media screen and (min-width: 1425px) {
-  main {
+  main div:first-of-type {
     display: grid;
-    grid-template: 2% 17% 2% 1fr 2%/35% 5% 1fr;
+    grid-template: 1fr/1fr 8vw 2fr;
     place-items: center;
   }
-  main .breadcrumbs {
-    grid-area: 1/span 3;
-    justify-self: start;
+  main div:first-of-type #searchbar_filters {
+    grid-area: 1/1;
   }
-  main #searchbar_filters {
-    grid-area: 2/1;
-  }
-  main .divider {
+  main div:first-of-type .divider {
     rotate: 90deg;
     max-width: 300px;
-    grid-area: 2/2;
+    grid-area: 1/2;
   }
-  main #trend_fossils {
-    grid-area: 2/3;
-  }
-  main #collection_fossils_title {
-    grid-area: 3/span 3;
-    justify-self: start;
-    margin-top: 0.5rem;
-    margin-left: 10vw;
-  }
-  main #collection_fossils {
-    grid-area: 4/span 3;
-  }
-  main .catalogue_nav {
-    grid-area: 5/span 3;
+  main div:first-of-type #trend_fossils {
+    grid-area: 1/3;
   }
 }
 
