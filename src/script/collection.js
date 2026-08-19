@@ -36,7 +36,7 @@ changing_tab_breadcrumbs();
 const submit_filters_button = document.querySelector('#submit_filters_button');
 const is_exposed = document.querySelector('#is_exposed');
 const continent = document.querySelector('#continent');
-const chosed_collection = document.querySelector('#select_collection');
+const chosed_collection = document.querySelector('#chosed_collection');
 const search_country = document.querySelector('#search_country');
 const form_filters = document.querySelector('#searchbar_filters form');
 
@@ -177,6 +177,7 @@ if (filtered_fossils.length > 0) {
     }
 
     fossils_notfound.style.display = 'block';
+    document.querySelector('.catalogue_nav').style.display = 'none';
 } else {
     for (let i=0 ; i < fossils_cards_name.length ; i++) {
         fossils_cards_name[i].innerText = fossils_db[i]['name'];

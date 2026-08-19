@@ -206,36 +206,24 @@ main {
 
 @media screen and (min-width: 1425px) {
     main {
-        display: grid;
-        grid-template: 2% 17% 2% 1fr 2% / 35% 5% 1fr;
-        place-items: center;
-    
-        .breadcrumbs {
-            grid-area: 1 / span 3;
-            justify-self: start;
-        }
-        #searchbar_filters {
-            grid-area: 2 / 1;
-        }
-        .divider {
-            rotate: 90deg;
-            max-width: 300px;
-            grid-area: 2 / 2;
-        }
-        #trend_fossils {
-            grid-area: 2 / 3;
-        }
-        #collection_fossils_title {
-            grid-area: 3 / span 3;
-            justify-self: start;
-            margin-top: 0.5rem;
-            margin-left: 10vw;
-        }
-        #collection_fossils {
-            grid-area: 4 / span 3;
-        }
-        .catalogue_nav {
-            grid-area: 5 / span 3;
+        div:first-of-type {
+            display: grid;
+            grid-template: 1fr / 1fr 8vw 2fr;
+            place-items: center;
+
+            #searchbar_filters {
+                grid-area: 1 / 1;
+            }
+
+            .divider {
+                rotate: 90deg;
+                max-width: 300px;
+                grid-area: 1 / 2;
+            }
+
+            #trend_fossils {
+                grid-area: 1 / 3;
+            }
         }
     }
 }
