@@ -146,6 +146,45 @@ if (localStorage.getItem('chosed_collection') !== "all_collections") {
     }
 }
 
+//////// Collection's trending fossils (most clicks)
+// Saving 3 most viewed fossils of each collection
+
+for (const fossil of fossils_db) {
+    let clicks_num = fossil["number_click"];
+    
+    if (localStorage.getItem('first_trend_fossil_all') === null || clicks_num >= fossils_db[parseInt(localStorage.getItem('first_trend_fossil_all'))]['number_click']) {
+        localStorage.setItem('first_trend_fossil_all', fossils_db.indexOf(fossil));
+    } else if (localStorage.getItem('second_trend_fossil_all') === null || clicks_num >= fossils_db[parseInt(localStorage.getItem('second_trend_fossil_all'))]['number_click']) {
+        localStorage.setItem('second_trend_fossil_all', fossils_db.indexOf(fossil));
+    } else if (localStorage.getItem('third_trend_fossil_all') === null || clicks_num >= fossils_db[parseInt(localStorage.getItem('third_trend_fossil_all'))]['number_click']) {
+        localStorage.setItem('third_trend_fossil_all', fossils_db.indexOf(fossil));
+    }
+}
+
+// Elements' trend cards
+const trend_fossil_cards_title = document.querySelectorAll('#trend_fossils article h3');
+const trend_fossil_cards_dating = document.querySelectorAll('#trend_fossils article p');
+
+// All collections
+const trend_fossils_all = [localStorage.getItem('first_trend_fossil_all'), localStorage.getItem('second_trend_fossil_all'), localStorage.getItem('third_trend_fossil_all')];
+console.log(trend_fossil_cards_title)
+
+for (let i=0 ; i < trend_fossil_cards_title.length ; i++) {
+    trend_fossil_cards_title[i].innerText = fossils_db[trend_fossils_all[i]].name;
+    trend_fossil_cards_dating[i].innerText = `- ${fossils_db[trend_fossils_all[i]].dating} Ma`;
+    // console.log(trend_fossil_cards_title.indexOf(trend_))
+}
+
+// Vertebrate
+const trend_fossils_vertebrate = [localStorage.getItem('first_trend_fossil_vertebrate'), localStorage.getItem('second_trend_fossil_vertebrate'), localStorage.getItem('third_trend_fossil_vertebrate')];
+// Invertebrate
+const trend_fossils_invertebrate = [localStorage.getItem('first_trend_fossil_invertebrate'), localStorage.getItem('second_trend_fossil_invertebrate'), localStorage.getItem('third_trend_fossil_invertebrate')];
+// Insect
+const trend_fossils_insect = [localStorage.getItem('first_trend_fossil_insect'), localStorage.getItem('second_trend_fossil_insect'), localStorage.getItem('third_trend_fossil_insect')];
+// Plant
+const trend_fossils_plant = [localStorage.getItem('first_trend_fossil_plant'), localStorage.getItem('second_trend_fossil_plant'), localStorage.getItem('third_trend_fossil_plant')];
+// Others
+const trend_fossils_others = [localStorage.getItem('first_trend_fossil_others'), localStorage.getItem('second_trend_fossil_others'), localStorage.getItem('third_trend_fossil_others')];
 
 //////// Changing fossil's card name depending if there's filters
 // Elements containing fossil's name of all cards

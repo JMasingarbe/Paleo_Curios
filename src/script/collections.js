@@ -39,5 +39,8 @@ const a_collection = document.querySelectorAll('a[href="collection.html"]');
 for (let i = 0 ; i<a_collection.length ; i++) {
     a_collection[i].addEventListener('click', ()=> {
         localStorage.setItem('chosed_collection', a_collection[i].id);
+        localStorage.setItem('is_exposed', 'false');
+        localStorage.setItem('continent', 'none_continent');
+        localStorage.setItem('search_country', '');
     })
 }
