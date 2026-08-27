@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Amarante&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/css/main.css">
+    <title>Paléo Curios - Fiche du fossile</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <img src="../../src/asset/temporary-logo.png" alt="Logo de Paléo Curios">
+        <!-- phone menu's button -->
+        <button type="button" id="phone_nav_button">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <nav>
+            <!-- nav links -->
+            <ul>
+                <li><a href="home.html">Accueil</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="log_in.html">Paléontologues</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <!-- Breadcrumbs -->
+        <ul class="breadcrumbs">
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="collection.html">Collection</a></li>
+            <li>Fossile</li>
+        </ul>
+
+        <!-- Checkbox to select the fossil for statistics -->
+        <input type="checkbox" name="fossil_selected" id="fossil_selected">
+        <label for="fossil_selected">Sélectionner</label>
+
+        <h2>Nom du fossile</h2>
+        <h3>Espèce : <a href="https://fr.wikipedia.org/wiki/Fossile">Nom de l'espèce</a></h3>
+
+        <!-- Photo carousel -->
+        <button type="button"><</button>
+        <ul>
+            <li><img src="https://placehold.co/400" alt="Photo fossile 1"></li>
+            <li><img src="https://placehold.co/400" alt="Photo fossile 2"></li>
+            <li><img src="https://placehold.co/400" alt="Photo fossile 3"></li>
+        </ul>
+        <span>dot</span><span>dot</span><span>dot</span>
+        <button type="button">></button>
+
+        <!-- Fossil's description -->
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, eveniet a quidem est minima rem excepturi? Earum, illum odio sed impedit maiores vel, recusandae quam quod distinctio est numquam unde.
+        Ipsa consectetur dolores qui earum voluptatibus architecto asperiores obcaecati voluptate ab molestias, quibusdam molestiae saepe perferendis iste reprehenderit vitae recusandae ratione animi sequi deserunt maiores natus, nesciunt accusamus! Ad, alias.</p>
+
+        <div class="divider"></div>
+
+        <!-- Fossil characteristics -->
+        <p><strong>Exposé :</strong> <span id="is_exposed">Oui</span></p>
+        <p><strong>Type de fossile :</strong> <span id="fossil_type">Type de fossile</span></p>
+            <!-- Fossil dating on the timeline -->
+        <p><strong>Datation :</strong> <span id="fossil_dating">Date</span></p>
+        <div id="fossil_timeline">
+            <img src="https://placehold.co/400x200" alt="Frise chronologique">
+            <div id="timeline_indicator"></div>
+        </div>
+            <!-- Fossil's extraction place -->
+        <p><strong>Extrait :</strong> <span id="fossil_extract">Lieu d'extraction</span></p>
+        <!-- Temporary style to see map placement -->
+        <div id="extraction_map" style="width: 32vw; height: 35vh; background-color: darkgray;"></div>
+
+        <!-- Button to the form to contact the fossil's owner -->
+        <a href="contact_form.html" class="link_button">Contacter le propriétaire</a>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <nav>
+            <ul>
+                <div>
+                    <li><a href="home.html">Accueil</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                </div>
+                <div>
+                    <li><a href="contact_faq.html">Contact & FAQ</a></li>
+                    <li><a href="legal_notices.html">Mentions légales</a></li>
+                </div>
+            </ul>
+        </nav>
+        <p>© Paléo Curios 2026 - Tous droits réservés</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../src/script/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+@mixin link_hover($size, $color) {
+    transform: scale(#{$size});
+    a {
+        text-decoration-color: $color;
+        text-decoration-line: underline;
+    }
+}
