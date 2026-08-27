@@ -183,7 +183,7 @@ article {
     padding: 1rem;
     box-shadow: 0.20rem 0.20rem 0.5rem $accent-color;
     border-radius: 15px 2.5px 15px 2.5px;
-
+    max-width: 232px;
     img {
         border-radius: 10px;
         margin-bottom: 0.4rem;
@@ -192,9 +192,17 @@ article {
     }
     h3 {
         margin: 0;
+        width: 195px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     p {
         margin: 0.25rem;
+        width: 175px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     transition: transform 0.2s;

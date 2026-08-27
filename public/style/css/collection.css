@@ -132,6 +132,9 @@ main fieldset select {
 main fieldset #submit_filters_button {
   align-self: end;
 }
+main .divider {
+  justify-self: center;
+}
 main #trend_fossils div, main #collection_fossils {
   display: inline-flex;
   flex-wrap: wrap;
@@ -144,11 +147,14 @@ main #collection_fossils_title {
 main #collection_fossils {
   max-width: 1200px;
 }
+main #collection_fossils h1 {
+  text-align: center;
+}
 main .catalogue_nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 1rem 0.2rem 0 0.2rem;
+  margin: 1.75rem 0.2rem 1rem 0.2rem;
 }
 main .catalogue_nav span {
   margin-top: 0.1rem;
