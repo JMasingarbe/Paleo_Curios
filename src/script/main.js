@@ -5,10 +5,15 @@ let last_url_string =""
 for (i=0 ; i<16 ; i++) {
     last_url_string += document.referrer[i];
 }
-    // If last url's begining doesn't match websiteurl's begining => clear localStorage
+    // If last url's begining doesn't match websiteurl's begining => rest localStorage
 if (last_url_string !== "http://127.0.0.1") {
-    localStorage.clear()
+    //////// Default filters values
+    localStorage.setItem('chosed_collection', 'all_collections');
+    localStorage.setItem('is_exposed', 'false');
+    localStorage.setItem('continent', 'none_continent');
+    localStorage.setItem('search_country', '');
 }
+
 
 // Responsive menu header
 const phone_nav_button = document.querySelector('#phone_nav_button');

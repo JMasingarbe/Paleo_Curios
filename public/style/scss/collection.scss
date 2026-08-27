@@ -152,6 +152,10 @@ main {
         }
     }
 
+    .divider {
+        justify-self: center;
+    }
+
     #trend_fossils div, #collection_fossils {
         display: inline-flex;
         flex-wrap: wrap;
@@ -163,13 +167,16 @@ main {
     }
     #collection_fossils {
         max-width: 1200px;
+        h1 {
+            text-align: center;
+        }
     }
 
     .catalogue_nav {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 1rem 0.2rem 0 0.2rem;
+        margin: 1.75rem 0.2rem 1rem 0.2rem;
         span {
             margin-top: 0.1rem;
         }
