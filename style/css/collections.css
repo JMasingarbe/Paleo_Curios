@@ -133,11 +133,11 @@ main #particulars_collections article {
 main #particulars_collections article:hover {
   transform: scale(1.08);
 }
-main #link_all_collections {
+main #all_collections {
   text-align: center;
   transition: transform 0.2s;
 }
-main #link_all_collections:hover {
+main #all_collections:hover {
   transform: scale(1.2);
   text-decoration: underline #E7512C;
 }
