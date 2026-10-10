@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="./asset/favicon/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Amarante&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/css/main.css">
-    <title>Paléo Curios - Formulaire de contact</title>
+    <title>Paléo Curios - À propos</title>
 </head>
 
 <body>
@@ -22,11 +22,11 @@
         <nav>
             <!-- nav links -->
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="articles.html">Articles</a></li>
-                <li><a href="collections.html">Collections</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="log_in.html">Paléontologues</a></li>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="articles.php">Articles</a></li>
+                <li><a href="collections.php">Collections</a></li>
+                <li><a href="about.php">À propos</a></li>
+                <li><a href="log_in.php">Paléontologues</a></li>
             </ul>
         </nav>
     </header>
@@ -41,14 +41,14 @@
         <nav>
             <ul>
                 <div>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="articles.html">Articles</a></li>
-                    <li><a href="collections.html">Collections</a></li>
-                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="articles.php">Articles</a></li>
+                    <li><a href="collections.php">Collections</a></li>
+                    <li><a href="about.php">À propos</a></li>
                 </div>
                 <div>
-                    <li><a href="contact_faq.html">Contact & FAQ</a></li>
-                    <li><a href="legal_notices.html">Mentions légales</a></li>
+                    <li><a href="contact_faq.php">Contact & FAQ</a></li>
+                    <li><a href="legal_notices.php">Mentions légales</a></li>
                 </div>
             </ul>
         </nav>

@@ -205,6 +205,21 @@ article {
         text-overflow: ellipsis;
     }
 
+    &.large_card {
+        max-width: 600px;
+
+        h3 {
+            white-space: normal;
+            overflow: visible;
+        }
+
+        p {
+            width: auto;
+            white-space: normal;
+            overflow: visible;
+        }
+    }
+
     transition: transform 0.2s;
     &:hover {
         transform: scale(1.0125);

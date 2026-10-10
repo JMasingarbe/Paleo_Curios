@@ -22,11 +22,11 @@
         <nav>
             <!-- nav links -->
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="articles.html">Articles</a></li>
-                <li><a href="collections.html">Collections</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="log_in.html">Paléontologues</a></li>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="articles.php">Articles</a></li>
+                <li><a href="collections.php">Collections</a></li>
+                <li><a href="about.php">À propos</a></li>
+                <li><a href="log_in.php">Paléontologues</a></li>
             </ul>
         </nav>
     </header>
@@ -41,44 +41,44 @@
             </div>
             <img src="https://placehold.co/400" alt="Photo illustrant l'article">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, quaerat. Rerum non quo earum consequatur consectetur nemo repellendus quaerat, doloribus quis sapiente soluta, ad voluptas reiciendis repellat veritatis! Impedit, eaque.</p>
-            <a href="article.html" class="link_button">Lire la suite</a>
+            <a href="article.php" class="link_button">Lire la suite</a>
         </div>
 
         <div class="divider"></div>
 
         <!-- Next 6 articles -->
-        <a href="article.html">
-            <article>
+        <a href="article.php">
+            <article class="large_card">
                 <h2>Titre de l'article</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores accusantium sed saepe repellat laborum temporibus aperiam repellendus cupiditate, officiis consequatur autem, voluptas quae ratione eaque dolor quod fuga amet. Reprehenderit.</p>
             </article>
         </a>
-        <a href="article.html">
-            <article>
+        <a href="article.php">
+            <article class="large_card">
                 <h2>Titre de l'article</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quis officiis nisi dolorum placeat aliquam exercitationem, quibusdam cum obcaecati libero illum error similique excepturi cupiditate, ut quam accusantium. In, ad.</p>
             </article>
         </a>
-        <a href="article.html">
-            <article>
+        <a href="article.php">
+            <article class="large_card">
                 <h2>Titre de l'article</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quis officiis nisi dolorum placeat aliquam exercitationem, quibusdam cum obcaecati libero illum error similique excepturi cupiditate, ut quam accusantium. In, ad.</p>
             </article>
         </a>
-        <a href="article.html">
-            <article>
+        <a href="article.php">
+            <article class="large_card">
                 <h2>Titre de l'article</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quis officiis nisi dolorum placeat aliquam exercitationem, quibusdam cum obcaecati libero illum error similique excepturi cupiditate, ut quam accusantium. In, ad.</p>
             </article>
         </a>
-        <a href="article.html">
-            <article>
+        <a href="article.php">
+            <article class="large_card">
                 <h2>Titre de l'article</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quis officiis nisi dolorum placeat aliquam exercitationem, quibusdam cum obcaecati libero illum error similique excepturi cupiditate, ut quam accusantium. In, ad.</p>
             </article>
         </a>
-        <a href="article.html">
-            <article>
+        <a href="article.php">
+            <article class="large_card">
                 <h2>Titre de l'article</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quis officiis nisi dolorum placeat aliquam exercitationem, quibusdam cum obcaecati libero illum error similique excepturi cupiditate, ut quam accusantium. In, ad.</p>
             </article>
@@ -100,14 +100,14 @@
         <nav>
             <ul>
                 <div>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="articles.html">Articles</a></li>
-                    <li><a href="collections.html">Collections</a></li>
-                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="articles.php">Articles</a></li>
+                    <li><a href="collections.php">Collections</a></li>
+                    <li><a href="about.php">À propos</a></li>
                 </div>
                 <div>
-                    <li><a href="contact_faq.html">Contact & FAQ</a></li>
-                    <li><a href="legal_notices.html">Mentions légales</a></li>
+                    <li><a href="contact_faq.php">Contact & FAQ</a></li>
+                    <li><a href="legal_notices.php">Mentions légales</a></li>
                 </div>
             </ul>
         </nav>

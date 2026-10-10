@@ -22,11 +22,11 @@
         <nav>
             <!-- nav links -->
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="articles.html">Articles</a></li>
-                <li><a href="collections.html">Collections</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="log_in.html">Paléontologues</a></li>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="articles.php">Articles</a></li>
+                <li><a href="collections.php">Collections</a></li>
+                <li><a href="about.php">À propos</a></li>
+                <li><a href="log_in.php">Paléontologues</a></li>
             </ul>
         </nav>
     </header>
@@ -35,8 +35,8 @@
     <main>
         <!-- Breadcrumbs -->
         <ul class="breadcrumbs">
-            <li><a href="collections.html">Collections</a></li>
-            <li><a href="collection.html">Collection</a></li>
+            <li><a href="collections.php">Collections</a></li>
+            <li><a href="collection.php">Collection</a></li>
             <li>Statistiques</li>
         </ul>
 
@@ -67,7 +67,7 @@
         <h3>Fossiles sélectionnés :</h3>
 
             <!-- 13 fossils cards -->
-        <a href="fossil.html">
+        <a href="fossil.php">
             <article>
                 <img src="https://placehold.co/200" alt="Photo du fossile">
                 <h3>Nom du fossile</h3>
@@ -75,7 +75,7 @@
             </article>
         </a>
 
-        <a href="fossil.html">
+        <a href="fossil.php">
             <article>
                 <img src="https://placehold.co/200" alt="Photo du fossile">
                 <h3>Nom du fossile</h3>
@@ -83,7 +83,7 @@
             </article>
         </a>
 
-        <a href="fossil.html">
+        <a href="fossil.php">
             <article>
                 <img src="https://placehold.co/200" alt="Photo du fossile">
                 <h3>Nom du fossile</h3>
@@ -91,7 +91,7 @@
             </article>
         </a>
 
-        <a href="fossil.html">
+        <a href="fossil.php">
             <article>
                 <img src="https://placehold.co/200" alt="Photo du fossile">
                 <h3>Nom du fossile</h3>
@@ -99,7 +99,7 @@
             </article>
         </a>
 
-        <a href="fossil.html">
+        <a href="fossil.php">
             <article>
                 <img src="https://placehold.co/200" alt="Photo du fossile">
                 <h3>Nom du fossile</h3>
@@ -107,7 +107,7 @@
             </article>
         </a>
 
-        <a href="fossil.html">
+        <a href="fossil.php">
             <article>
                 <img src="https://placehold.co/200" alt="Photo du fossile">
                 <h3>Nom du fossile</h3>
@@ -115,7 +115,7 @@
             </article>
         </a>
 
-        <a href="fossil.html">
+        <a href="fossil.php">
             <article>
                 <img src="https://placehold.co/200" alt="Photo du fossile">
                 <h3>Nom du fossile</h3>
@@ -123,7 +123,7 @@
             </article>
         </a>
 
-        <a href="fossil.html">
+        <a href="fossil.php">
             <article>
                 <img src="https://placehold.co/200" alt="Photo du fossile">
                 <h3>Nom du fossile</h3>
@@ -131,7 +131,7 @@
             </article>
         </a>
 
-        <a href="fossil.html">
+        <a href="fossil.php">
             <article>
                 <img src="https://placehold.co/200" alt="Photo du fossile">
                 <h3>Nom du fossile</h3>
@@ -139,7 +139,7 @@
             </article>
         </a>
 
-        <a href="fossil.html">
+        <a href="fossil.php">
             <article>
                 <img src="https://placehold.co/200" alt="Photo du fossile">
                 <h3>Nom du fossile</h3>
@@ -147,7 +147,7 @@
             </article>
         </a>
 
-        <a href="fossil.html">
+        <a href="fossil.php">
             <article>
                 <img src="https://placehold.co/200" alt="Photo du fossile">
                 <h3>Nom du fossile</h3>
@@ -155,7 +155,7 @@
             </article>
         </a>
 
-        <a href="fossil.html">
+        <a href="fossil.php">
             <article>
                 <img src="https://placehold.co/200" alt="Photo du fossile">
                 <h3>Nom du fossile</h3>
@@ -163,7 +163,7 @@
             </article>
         </a>
 
-        <a href="fossil.html">
+        <a href="fossil.php">
             <article>
                 <img src="https://placehold.co/200" alt="Photo du fossile">
                 <h3>Nom du fossile</h3>
@@ -187,14 +187,14 @@
         <nav>
             <ul>
                 <div>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="articles.html">Articles</a></li>
-                    <li><a href="collections.html">Collections</a></li>
-                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="articles.php">Articles</a></li>
+                    <li><a href="collections.php">Collections</a></li>
+                    <li><a href="about.php">À propos</a></li>
                 </div>
                 <div>
-                    <li><a href="contact_faq.html">Contact & FAQ</a></li>
-                    <li><a href="legal_notices.html">Mentions légales</a></li>
+                    <li><a href="contact_faq.php">Contact & FAQ</a></li>
+                    <li><a href="legal_notices.php">Mentions légales</a></li>
                 </div>
             </ul>
         </nav>

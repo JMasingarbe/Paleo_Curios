@@ -197,6 +197,18 @@ article p {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+article.large_card {
+  max-width: 600px;
+}
+article.large_card h3 {
+  white-space: normal;
+  overflow: visible;
+}
+article.large_card p {
+  width: auto;
+  white-space: normal;
+  overflow: visible;
+}
 article {
   transition: transform 0.2s;
 }

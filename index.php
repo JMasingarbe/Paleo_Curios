@@ -23,11 +23,11 @@
         <nav>
             <!-- nav links -->
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="articles.html">Articles</a></li>
-                <li><a href="collections.html">Collections</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="log_in.html">Paléontologues</a></li>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="articles.php">Articles</a></li>
+                <li><a href="collections.php">Collections</a></li>
+                <li><a href="about.php">À propos</a></li>
+                <li><a href="log_in.php">Paléontologues</a></li>
             </ul>
         </nav>
     </header>
@@ -40,7 +40,7 @@
             <p id="article_author">Auteur.ice</p>
             <img src="https://placehold.co/400" alt="Photo de l'article">
             <p>Introduction.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente odit harum similique corporis commodi ad aliquam nulla fugiat nemo atque veniam esse saepe, vitae enim deleniti, dolores iste explicabo praesentium maxime? Nobis aliquid facere autem quam, asperiores aliquam cupiditate eligendi suscipit accusamus debitis fugit, consequatur voluptatem, quidem cumque qui iure sit velit itaque adipisci quisquam magnam architecto magni alias. Iusto, assumenda. Aliquam deserunt autem earum ad nobis natus eligendi laudantium animi molestias, qui dolorum deleniti nostrum quibusdam temporibus nisi? Labore totam dolor quo nihil officia! Ullam fuga optio rerum! Corporis exercitationem doloremque, consequatur laudantium veniam quisquam amet! Natus, facere sunt!</p>
-            <a href="article.html" class="sec_link_button">Lire la suite</a>
+            <a href="article.php" class="sec_link_button">Lire la suite</a>
         </section>
 
         <div class="divider"></div>
@@ -49,7 +49,7 @@
         <section id="trend_fossils">
             <h2>Nos fossiles tendances</h2>
             <div>
-                <a href="fossil.html">
+                <a href="fossil.php">
                     <article>
                         <img src="https://placehold.co/200" alt="Photo du fossile">
                         <h3>Nom du fossile</h3>
@@ -57,7 +57,7 @@
                     </article>
                 </a>
     
-                <a href="fossil.html">
+                <a href="fossil.php">
                     <article>
                         <img src="https://placehold.co/200" alt="Photo du fossile">
                         <h3>Nom du fossile</h3>
@@ -65,7 +65,7 @@
                     </article>
                 </a>
     
-                <a href="fossil.html">
+                <a href="fossil.php">
                     <article>
                         <img src="https://placehold.co/200" alt="Photo du fossile">
                         <h3>Nom du fossile</h3>
@@ -80,13 +80,13 @@
         <!-- Random fossil -->
         <section id="random_fossil">
             <h2>Fossile au hasard</h2>
-            <article id="random_fossil_card">
+            <article id="random_fossil_card" class="large_card">
                 <div>
                     <h3>Nom du fossile</h3>
                     <p>Nom de l'espèce</p>
                     <img src="https://placehold.co/200" alt="Photo du fossile">
                 </div>
-                <p id="random_fossil_description">Description du fossile</p>
+                <p id="random_fossil_description">Description du fossile Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, pariatur nobis. Odio, non deleniti illo nihil nemo error recusandae quae facere adipisci facilis quidem? Perferendis pariatur deleniti qui fuga neque.</p>
             </article>
         </section>
     </main>
@@ -96,14 +96,14 @@
         <nav>
             <ul>
                 <div>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="articles.html">Articles</a></li>
-                    <li><a href="collections.html">Collections</a></li>
-                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="articles.php">Articles</a></li>
+                    <li><a href="collections.php">Collections</a></li>
+                    <li><a href="about.php">À propos</a></li>
                 </div>
                 <div>
-                    <li><a href="contact_faq.html">Contact & FAQ</a></li>
-                    <li><a href="legal_notices.html">Mentions légales</a></li>
+                    <li><a href="contact_faq.php">Contact & FAQ</a></li>
+                    <li><a href="legal_notices.php">Mentions légales</a></li>
                 </div>
             </ul>
         </nav>

@@ -22,11 +22,11 @@
         <nav>
             <!-- nav links -->
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="articles.html">Articles</a></li>
-                <li><a href="collections.html">Collections</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="log_in.html">Paléontologues</a></li>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="articles.php">Articles</a></li>
+                <li><a href="collections.php">Collections</a></li>
+                <li><a href="about.php">À propos</a></li>
+                <li><a href="log_in.php">Paléontologues</a></li>
             </ul>
         </nav>
     </header>
@@ -35,8 +35,8 @@
     <main>
         <!-- Breadcrumbs -->
         <ul class="breadcrumbs">
-            <li><a href="collections.html">Collections</a></li>
-            <li><a href="collection.html">Collection</a></li>
+            <li><a href="collections.php">Collections</a></li>
+            <li><a href="collection.php">Collection</a></li>
             <li>Fossile</li>
         </ul>
 
@@ -78,7 +78,7 @@
         <div id="extraction_map" style="width: 32vw; height: 35vh; background-color: darkgray;"></div>
 
         <!-- Button to the form to contact the fossil's owner -->
-        <a href="contact_form.html" class="link_button">Contacter le propriétaire</a>
+        <a href="contact_form.php" class="link_button">Contacter le propriétaire</a>
     </main>
 
     <!-- Footer -->
@@ -86,14 +86,14 @@
         <nav>
             <ul>
                 <div>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="articles.html">Articles</a></li>
-                    <li><a href="collections.html">Collections</a></li>
-                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="articles.php">Articles</a></li>
+                    <li><a href="collections.php">Collections</a></li>
+                    <li><a href="about.php">À propos</a></li>
                 </div>
                 <div>
-                    <li><a href="contact_faq.html">Contact & FAQ</a></li>
-                    <li><a href="legal_notices.html">Mentions légales</a></li>
+                    <li><a href="contact_faq.php">Contact & FAQ</a></li>
+                    <li><a href="legal_notices.php">Mentions légales</a></li>
                 </div>
             </ul>
         </nav>

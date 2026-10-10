@@ -23,11 +23,11 @@
         <nav>
             <!-- nav links -->
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="articles.html">Articles</a></li>
-                <li><a href="collections.html">Collections</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="log_in.html">Paléontologues</a></li>
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="articles.php">Articles</a></li>
+                <li><a href="collections.php">Collections</a></li>
+                <li><a href="about.php">À propos</a></li>
+                <li><a href="log_in.php">Paléontologues</a></li>
             </ul>
         </nav>
     </header>
@@ -94,35 +94,35 @@
 
         <!-- Collections -->
         <section id="particulars_collections">
-            <a href="collection.html" id="vertebrate">
+            <a href="collection.php" id="vertebrate">
                 <article>
                     <img src="./asset/pictures/Archaeopteryx_lithographica_(Berlin_specimen).jpg" alt="Photo de la collection des fossiles de vertébrés">
                     <h2>Vertébrés</h2>
                 </article>
             </a>
     
-            <a href="collection.html" id="invertebrate">
+            <a href="collection.php" id="invertebrate">
                 <article>
                     <img src="./asset/pictures/Alokistocare_sp_4.JPG" alt="Photo de la collection des fossiles de invertébrés">
                     <h2>Invertébrés</h2>
                 </article>
             </a>
     
-            <a href="collection.html" id="insect">
+            <a href="collection.php" id="insect">
                 <article>
                     <img src="./asset/pictures/Meganeura_monyi_au_Museum_de_Toulouse.jpg" alt="Photo de la collection des fossiles de insectes">
                     <h2>Insectes</h2>
                 </article>
             </a>
     
-            <a href="collection.html" id="plant">
+            <a href="collection.php" id="plant">
                 <article>
                     <img src="./asset/pictures/Caesalpina_eocenica_322.jpg" alt="Photo de la collection des fossiles de plantes">
                     <h2>Plantes</h2>
                 </article>
             </a>
     
-            <a href="collection.html" id="other_fossils">
+            <a href="collection.php" id="other_fossils">
                 <article>
                     <img src="./asset/pictures/il_1588xN.3078041578_40cs.webp" alt="Photo de la collection des autres fossiles">
                     <h2>Autres</h2>
@@ -130,9 +130,9 @@
             </a>
         </section>
 
-        <a href="collection.html" id="all_collections"><h2>Toutes les collections</h2></a>
+        <a href="collection.php" id="all_collections"><h2>Toutes les collections</h2></a>
 
-        <a href="statistics.html" class="link_button">Statistiques générales</a>
+        <a href="statistics.php" class="link_button">Statistiques générales</a>
     </main>
 
     <!-- Footer -->
@@ -140,14 +140,14 @@
         <nav>
             <ul>
                 <div>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="articles.html">Articles</a></li>
-                    <li><a href="collections.html">Collections</a></li>
-                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="articles.php">Articles</a></li>
+                    <li><a href="collections.php">Collections</a></li>
+                    <li><a href="about.php">À propos</a></li>
                 </div>
                 <div>
-                    <li><a href="contact_faq.html">Contact & FAQ</a></li>
-                    <li><a href="legal_notices.html">Mentions légales</a></li>
+                    <li><a href="contact_faq.php">Contact & FAQ</a></li>
+                    <li><a href="legal_notices.php">Mentions légales</a></li>
                 </div>
             </ul>
         </nav>

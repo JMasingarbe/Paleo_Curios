@@ -5,14 +5,15 @@ let last_url_string =""
 for (i=0 ; i<16 ; i++) {
     last_url_string += document.referrer[i];
 }
-    // If last url's begining doesn't match websiteurl's begining => rest localStorage
-if (last_url_string !== "http://127.0.0.1") {
-    //////// Default filters values
-    localStorage.setItem('chosed_collection', 'all_collections');
-    localStorage.setItem('is_exposed', 'false');
-    localStorage.setItem('continent', 'none_continent');
-    localStorage.setItem('search_country', '');
-}
+    // If last url's begining doesn't match website url's begining => rest localStorage
+    // !!!!! Don't work, have to be rework
+// if (last_url_string !== "http://127.0.0.1") {
+//     //////// Default filters values
+//     localStorage.setItem('chosed_collection', 'all_collections');
+//     localStorage.setItem('is_exposed', 'false');
+//     localStorage.setItem('continent', 'none_continent');
+//     localStorage.setItem('search_country', '');
+// }
 
 
 // Responsive menu header
