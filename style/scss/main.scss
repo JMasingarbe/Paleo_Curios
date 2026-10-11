@@ -2,6 +2,14 @@
 @use './variables.scss' as *;
 @use './mixins.scss' as m;
 
+// Test styled focus
+main {
+    *:focus-visible {
+        outline: 3px solid $sec-accent-color;
+        border-radius: 0.3rem;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;

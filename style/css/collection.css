@@ -1,3 +1,11 @@
+@font-face {
+  font-family: Alegreya;
+  src: url(../../font/Alegreya/Alegreya-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: Source Code Pro;
+  src: url(../../font/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf);
+}
 main {
   display: flex;
   flex-direction: column;
@@ -46,7 +54,7 @@ main #searchbar {
   background-color: rgba(28, 55, 126, 0.5);
 }
 main #searchbar input {
-  font-family: "Source Code Pro", monospace;
+  font-family: Source Code Pro;
   font-size: 0.9rem;
   background-color: transparent;
   border: none;
@@ -80,7 +88,7 @@ main fieldset input, main fieldset select {
   border: solid 1px #050100;
   border-radius: 5px;
   padding: 0.2rem;
-  font-family: "Source Code Pro", monospace;
+  font-family: Source Code Pro;
 }
 main fieldset label[for=is_exposed] {
   display: flex;
@@ -112,13 +120,19 @@ main fieldset label[for=is_exposed] #custom_checkbox_exposed:hover {
   cursor: pointer;
 }
 main fieldset input[type=checkbox] {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
 }
 main fieldset input[type=checkbox]:checked + label[for=is_exposed] #custom_checkbox_exposed {
   background-color: #1C377E;
 }
 main fieldset input[type=checkbox]:checked + label[for=is_exposed] #custom_checkbox_exposed::after {
   display: block;
+}
+main fieldset input[type=checkbox]:focus-visible + label[for=is_exposed] #custom_checkbox_exposed {
+  outline: 3px solid #1C377E;
 }
 main fieldset input[type=text] {
   cursor: text;

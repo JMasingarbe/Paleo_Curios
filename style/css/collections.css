@@ -1,3 +1,11 @@
+@font-face {
+  font-family: Alegreya;
+  src: url(../../font/Alegreya/Alegreya-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: Source Code Pro;
+  src: url(../../font/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf);
+}
 main {
   display: flex;
   flex-direction: column;
@@ -27,7 +35,7 @@ main #searchbar_filter #searchbar {
   background-color: rgba(28, 55, 126, 0.5);
 }
 main #searchbar_filter #searchbar input {
-  font-family: "Source Code Pro", monospace;
+  font-family: Source Code Pro;
   font-size: 0.9rem;
   background-color: transparent;
   border: none;
@@ -62,7 +70,7 @@ main form fieldset input, main form fieldset select {
   border: solid 1px #050100;
   border-radius: 5px;
   padding: 0.2rem;
-  font-family: "Source Code Pro", monospace;
+  font-family: Source Code Pro;
 }
 main form fieldset input[type=text] {
   cursor: text;

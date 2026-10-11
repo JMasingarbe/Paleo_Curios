@@ -29,13 +29,13 @@ submit_filters_button.addEventListener('click', ()=> {
     localStorage.setItem('continent', continent.value);
     localStorage.setItem('chosed_collection', select_collection.value);
     localStorage.setItem('search_country', search_country.value);
-    document.location.href = 'collection.html';
+    document.location.href = 'collection.php';
 })
 
 //////// Saving collection when click on card / link 's collection
-const a_collection = document.querySelectorAll('a[href="collection.html"]');
+const a_collection = document.querySelectorAll('a[href="collection.php"]');
 
-// On each <a> directing to collection.html, listen and save wich collection was click on
+// On each <a> directing to collection.php, listen and save wich collection was click on
 for (let i = 0 ; i<a_collection.length ; i++) {
     a_collection[i].addEventListener('click', ()=> {
         localStorage.setItem('chosed_collection', a_collection[i].id);

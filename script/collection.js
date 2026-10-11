@@ -1,4 +1,4 @@
-//////// Function changing collection.html's title in tab and breadcrumbs
+//////// Function changing collection.php's title in tab and breadcrumbs
 function changing_tab_breadcrumbs() {
     const tab_title = document.querySelector('head title');
     const page_breadcrumb_title = document.querySelector('.breadcrumbs li:last-child');
@@ -8,24 +8,24 @@ function changing_tab_breadcrumbs() {
     // Change tab and breadcrumb 's title depending on chosed collection
     switch (saved_collections) {
         case "vertebrate" :
-            tab_title.innerText = (`Vertébrés - Paléo Curios`);
-            page_breadcrumb_title.innerText = ('Vertébrés');
+            document.title = (`Vertébrés - Paléo Curios`);
+            page_breadcrumb_title.textContent = ('Vertébrés');
             break
         case "invertebrate" :
-            tab_title.innerText = (`Invertébrés - Paléo Curios`);
-            page_breadcrumb_title.innerText = ('Invertébrés');
+            document.title = (`Invertébrés - Paléo Curios`);
+            page_breadcrumb_title.textContent = ('Invertébrés');
             break
         case "insect" :
-            tab_title.innerText = (`Insectes - Paléo Curios`);
-            page_breadcrumb_title.innerText = ('Insectes');
+            document.title = (`Insectes - Paléo Curios`);
+            page_breadcrumb_title.textContent = ('Insectes');
             break
         case "plant" :
-            tab_title.innerText = (`Plantes - Paléo Curios`);
-            page_breadcrumb_title.innerText = ('Plantes');
+            document.title = (`Plantes - Paléo Curios`);
+            page_breadcrumb_title.textContent = ('Plantes');
             break
         case "other_fossils" :
-            tab_title.innerText = (`Autres - Paléo Curios`);
-            page_breadcrumb_title.innerText = ('Autres');
+            document.title = (`Autres - Paléo Curios`);
+            page_breadcrumb_title.textContent = ('Autres');
             break
     }
 }
@@ -59,7 +59,11 @@ submit_filters_button.addEventListener('click', ()=> {
     // Save in localStorage all filters
     localStorage.setItem('is_exposed', is_exposed.checked);
     localStorage.setItem('continent', continent.value);
-    localStorage.setItem('chosed_collection', chosed_collection.value);
+    if (localStorage.getItem('continent') != null) {
+        localStorage.setItem('chosed_collection', chosed_collection.value);
+    } else {
+        localStorage.setItem('chosed_collection', "none_continent");
+    }
     localStorage.setItem('search_country', search_country.value);
     // Refresh tab and breadcrumb's page title
     changing_tab_breadcrumbs();
@@ -109,7 +113,8 @@ if (localStorage.getItem('is_exposed') === "true") {
 // If a continent was chosed
 if (localStorage.getItem('continent') !== "none_continent") {
     // Does fossils_db has already been sorted ?
-    if (filtered_fossils.length !== 0) {
+    if (filtered_fossils.length !== 0 
+        || localStorage.getItem('is_exposed') === "true") {
         for (let i=0 ; i < filtered_fossils.length ; i++) {
             if (filtered_fossils[i]["continent"] != localStorage.getItem('continent')) {
                 filtered_fossils.splice(i, 1);
@@ -127,9 +132,13 @@ if (localStorage.getItem('continent') !== "none_continent") {
 }
 
 // If a collection was chosed
-if (localStorage.getItem('chosed_collection') !== "all_collections") {
+if (localStorage.getItem('chosed_collection') !== "all_collections" 
+&& localStorage.getItem('chosed_collection') !== null) {
+
     // Does fossils_db has already been sorted ?
-    if (filtered_fossils.length !== 0) {
+    if (filtered_fossils.length !== 0 
+        || localStorage.getItem('is_exposed') === "true" 
+        || localStorage.getItem('continent') !== "none_continent") {
         for (let i=0 ; i < filtered_fossils.length ; i++) {
             if (filtered_fossils[i]["collection"] != localStorage.getItem('chosed_collection')) {
                 filtered_fossils.splice(i, 1);
@@ -170,8 +179,8 @@ const trend_fossils_all = [localStorage.getItem('first_trend_fossil_all'), local
 console.log(trend_fossil_cards_title)
 
 for (let i=0 ; i < trend_fossil_cards_title.length ; i++) {
-    trend_fossil_cards_title[i].innerText = fossils_db[trend_fossils_all[i]].name;
-    trend_fossil_cards_dating[i].innerText = `- ${fossils_db[trend_fossils_all[i]].dating} Ma`;
+    trend_fossil_cards_title[i].textContent = fossils_db[trend_fossils_all[i]].name;
+    trend_fossil_cards_dating[i].textContent = `- ${fossils_db[trend_fossils_all[i]].dating} Ma`;
     // console.log(trend_fossil_cards_title.indexOf(trend_))
 }
 
@@ -201,8 +210,8 @@ if (filtered_fossils.length > 0) {
     
     // Changing fossil's cards name and dating
     for (let i=0 ; i < smallest_length ; i++) {
-        fossils_cards_name[i].innerText = filtered_fossils[i]['name'];
-        fossils_cards_dating[i].innerText = `- ${filtered_fossils[i]['dating']} Ma`;
+        fossils_cards_name[i].textContent = filtered_fossils[i]['name'];
+        fossils_cards_dating[i].textContent = `- ${filtered_fossils[i]['dating']} Ma`;
     }
 
     // Hiding overflowing cards
@@ -219,8 +228,8 @@ if (filtered_fossils.length > 0) {
     document.querySelector('.catalogue_nav').style.display = 'none';
 } else {
     for (let i=0 ; i < fossils_cards_name.length ; i++) {
-        fossils_cards_name[i].innerText = fossils_db[i]['name'];
-        fossils_cards_dating[i].innerText = `- ${fossils_db[i]['dating']} Ma`;
+        fossils_cards_name[i].textContent = fossils_db[i]['name'];
+        fossils_cards_dating[i].textContent = `- ${fossils_db[i]['dating']} Ma`;
     }
 }
 // console.log(fossils_cards_name[0]);

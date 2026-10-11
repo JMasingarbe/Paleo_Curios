@@ -125,13 +125,21 @@ main {
         }
         
         input[type="checkbox"] {
-            display: none;
+            position:absolute; 
+            width:1px; 
+            height:1px; 
+            clip-path: inset(50%); 
             &:checked + label[for="is_exposed"] {
                 #custom_checkbox_exposed {
                     background-color: $sec-accent-color;
                     &::after {
                         display: block;
                     }
+                }
+            }
+            &:focus-visible + label[for="is_exposed"] {
+                #custom_checkbox_exposed  {
+                    outline: 3px solid $sec-accent-color;
                 }
             }
         }
