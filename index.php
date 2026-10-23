@@ -15,9 +15,9 @@
         <img src="./asset/noun-dragonfly-1455556.png" alt="Logo de Paléo Curios">
         <!-- phone menu's button -->
         <button type="button" id="phone_nav_button">
-            <div></div>
-            <div></div>
-            <div></div>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </button>
         <nav>
             <!-- nav links -->

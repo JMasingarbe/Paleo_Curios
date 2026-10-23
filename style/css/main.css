@@ -78,7 +78,8 @@ header ul li:hover, footer ul li:hover {
     background-color: #050100;
     border: none;
   }
-  header #phone_nav_button div {
+  header #phone_nav_button span {
+    display: block;
     width: 50vw;
     max-width: 4rem;
     height: 0.4rem;
@@ -88,19 +89,19 @@ header ul li:hover, footer ul li:hover {
     transition: 0.4s;
     /* Rotate first bar */
   }
-  header #phone_nav_button div:nth-child(1).menu_icon_animation {
+  header #phone_nav_button span:nth-child(1).menu_icon_animation {
     transform: translate(0, 0.45rem) rotate(-45deg);
   }
-  header #phone_nav_button div {
+  header #phone_nav_button span {
     /* Fade out the second bar */
   }
-  header #phone_nav_button div:nth-child(2).menu_icon_animation {
+  header #phone_nav_button span:nth-child(2).menu_icon_animation {
     display: none;
   }
-  header #phone_nav_button div {
+  header #phone_nav_button span {
     /* Rotate last bar */
   }
-  header #phone_nav_button div:nth-child(3).menu_icon_animation {
+  header #phone_nav_button span:nth-child(3).menu_icon_animation {
     transform: translate(0, -0.45rem) rotate(45deg);
   }
   header nav {
