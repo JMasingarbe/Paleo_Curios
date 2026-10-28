@@ -1,0 +1,17 @@
+$light-color: #FAE9D2;
+$dark-color: #050100;
+$accent-color: #E7512C;
+$sec-accent-color: #1C377E;
+
+@font-face {
+    font-family: Alegreya;
+    src: url(../../asset/font/Alegreya/Alegreya-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Source Code Pro;
+    src: url(../../asset/font/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf);
+}
+
+$title-font: Alegreya;
+$font: Source Code Pro;
