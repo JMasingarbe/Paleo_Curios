@@ -1,5 +1,5 @@
 {
-    "name": "jmasingarbe/structure_mvc",
+    "name": "jmasingarbe/paleo-curios",
     "autoload": {
         "psr-4": {
             "App\\":"src/"

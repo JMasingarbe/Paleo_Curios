@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="./asset/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style/css/main.css">
     <link rel="stylesheet" href="./style/css/collection.css">
-    <title>Toutes les Collections - Paléo Curios</title>
+    <title><?= $title ?? "" ?></title>
 </head>
 
 <body>
@@ -17,19 +17,19 @@
     <main>
         <!-- Breadcrumbs -->
         <ul class="breadcrumbs">
-            <li><a href="collections.php">Collections</a></li>
-            <li>Toutes les Collections</li>
+            <li><a href="/collections">Collections</a></li>
+            <li><?= $data["breadcrumbs"] ?? "" ?></li>
         </ul>
 
         <div>
-            <div id="searchbar_filters">
+            <search id="searchbar_filters">
                 <!-- Search bar -->
                 <div id="searchbar">
                     <input type="search" id="searchbar_input" name="searchbar_input" placeholder="Rechercher" aria-label="Champ de recherche" maxlength="150">
                     <button type="button" aria-label="Bouton de recherche"><img src="./asset/icons/noun-search-2738105.png" alt="Icône de recherche"></button>
                 </div>
                 <!-- Filter -->
-                <form action="#" method="post">
+                <form method="get">
                     <fieldset>
                         <legend>Filtres :</legend>
 
@@ -43,7 +43,7 @@
                         <div>
                             <label for="continent">Continent :</label>
                             <select name="continent" id="continent">
-                                <option value="none_continent">Aucun sélectionné</option>
+                                <option value="">Aucun sélectionné</option>
                                 <option value="africa">Afrique</option>
                                 <option value="north_america">Amérique du Nord</option>
                                 <option value="south_america">Amérique du Sud</option>
@@ -56,13 +56,13 @@
 
                         <!-- Dropdown collection -->
                         <div id="dropdown_collection">
-                            <label for="chosed_collection">Collection :</label>
-                            <select name="chosed_collection" id="chosed_collection">
-                                <option value="all_collections">Toutes</option>
-                                <option value="vertebrate">Vertébrés</option>
-                                <option value="invertebrate">Invertébrés</option>
-                                <option value="insect">Insectes</option>
-                                <option value="plant">Plantes</option>
+                            <label for="collection">Collection :</label>
+                            <select name="collection" id="collection">
+                                <option value="">Toutes</option>
+                                <option value="vertebrates">Vertébrés</option>
+                                <option value="invertebrates">Invertébrés</option>
+                                <option value="insects">Insectes</option>
+                                <option value="plants">Plantes</option>
                                 <option value="other_fossils">Autres</option>
                             </select>
                         </div>
@@ -76,7 +76,7 @@
                         <button type="submit" id="submit_filters_button" class="sec_link_button">Appliquer</button>
                     </fieldset>
                 </form>
-            </div>
+            </search>
             
             <div class="divider"></div>
 
@@ -337,6 +337,6 @@
 
     <!-- Scripts -->
     <script src="./script/main.js"></script>
-    <script type="module" src="./script/collection.js"></script>
+    <!-- <script type="module" src="./script/collection.js"></script> -->
 </body>
 </html>

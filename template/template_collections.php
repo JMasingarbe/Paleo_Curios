@@ -16,63 +16,65 @@
     <!-- Main -->
     <main>
         <!-- Search bar & filter button -->
-        <div id="searchbar_filter">
-            <div id="searchbar">
-                <input type="search" id="searchbar_input" name="searchbar_input" placeholder="Rechercher" aria-label="Champ de recherche" maxlength="150">
-                <button type="button" aria-label="Bouton de recherche"><img src="./asset/icons/noun-search-2738105.png" alt="Icône de recherche"></button>
+        <search>
+            <div id="searchbar_filter">
+                <div id="searchbar">
+                    <input type="search" id="searchbar_input" name="searchbar_input" placeholder="Rechercher" aria-label="Champ de recherche" maxlength="150">
+                    <button type="button" aria-label="Bouton de recherche"><img src="./asset/icons/noun-search-2738105.png" alt="Icône de recherche"></button>
+                </div>
+                <button type="button" id="filters_button" aria-label="Bouton d'affichage des filtres de recherche"><img src="./asset/icons/noun-filter-5208249.png" alt="Icône de filtrage"></button>
             </div>
-            <button type="button" id="filters_button" aria-label="Bouton d'affichage des filtres de recherche"><img src="./asset/icons/noun-filter-5208249.png" alt="Icône de filtrage"></button>
-        </div>
 
-        <!-- Filter -->
-        <form action="/collection" method="get">
-            <fieldset>
-                <legend>Filtres :</legend>
-                <button type="button" id="closing_filters"><img src="./asset/icons/noun-close-75759.png" alt="Icône de fermeture"></button>
-                
-                <!-- Checkbox: fossil is exposed ? -->
-                <div>
-                    <input type="checkbox" name="is_exposed" id="is_exposed">
-                    <label for="is_exposed"><div id="custom_checkbox_exposed"></div> Exposé</label>
-                </div>
+            <!-- Filter -->
+            <form action="/collection" method="get">
+                <fieldset>
+                    <legend>Filtres :</legend>
+                    <button type="button" id="closing_filters"><img src="./asset/icons/noun-close-75759.png" alt="Icône de fermeture"></button>
+                    
+                    <!-- Checkbox: fossil is exposed ? -->
+                    <div>
+                        <input type="checkbox" name="is_exposed" id="is_exposed">
+                        <label for="is_exposed"><div id="custom_checkbox_exposed"></div> Exposé</label>
+                    </div>
 
-                <!-- Dropdown continent -->
-                <div>
-                    <label for="continent">Continent :</label>
-                    <select name="continent" id="continent">
-                        <option value="none_continent">Aucun sélectionné</option>
-                        <option value="africa">Afrique</option>
-                        <option value="north_america">Amérique du Nord</option>
-                        <option value="south_america">Amérique du Sud</option>
-                        <option value="antartica">Antarctique</option>
-                        <option value="asia">Asie</option>
-                        <option value="europa">Europe</option>
-                        <option value="oceania">Océanie</option>
-                    </select>
-                </div>
+                    <!-- Dropdown continent -->
+                    <div>
+                        <label for="continent">Continent :</label>
+                        <select name="continent" id="continent">
+                            <option value="">Aucun sélectionné</option>
+                            <option value="africa">Afrique</option>
+                            <option value="north_america">Amérique du Nord</option>
+                            <option value="south_america">Amérique du Sud</option>
+                            <option value="antartica">Antarctique</option>
+                            <option value="asia">Asie</option>
+                            <option value="europa">Europe</option>
+                            <option value="oceania">Océanie</option>
+                        </select>
+                    </div>
 
-                <!-- Dropdown collection -->
-                <div id="dropdown_collection">
-                    <label for="collection">Collection :</label>
-                    <select name="collection" id="collection">
-                        <option value="all_collections">Toutes</option>
-                        <option value="vertebrates">Vertébrés</option>
-                        <option value="invertebrates">Invertébrés</option>
-                        <option value="insects">Insectes</option>
-                        <option value="plants">Plantes</option>
-                        <option value="other_fossils">Autres</option>
-                    </select>
-                </div>
+                    <!-- Dropdown collection -->
+                    <div id="dropdown_collection">
+                        <label for="collection">Collection :</label>
+                        <select name="collection" id="collection">
+                            <option value="">Toutes</option>
+                            <option value="vertebrates">Vertébrés</option>
+                            <option value="invertebrates">Invertébrés</option>
+                            <option value="insects">Insectes</option>
+                            <option value="plants">Plantes</option>
+                            <option value="other_fossils">Autres</option>
+                        </select>
+                    </div>
 
-                <!-- Search country -->
-                <div>
-                    <label for="search_country">Pays :</label>
-                    <input type="text" name="search_country" id="search_country" placeholder="Pays" maxlength="50">
-                </div>
+                    <!-- Search country -->
+                    <div>
+                        <label for="search_country">Pays :</label>
+                        <input type="text" name="search_country" id="search_country" placeholder="Pays" maxlength="50">
+                    </div>
 
-                <button type="submit" id="submit_filters_button" class="sec_link_button">Appliquer</button>
-            </fieldset>
-        </form>
+                    <button type="submit" id="submit_filters_button" class="sec_link_button">Appliquer</button>
+                </fieldset>
+            </form>
+        </search>
 
         <!-- Collections -->
         <section id="particulars_collections">

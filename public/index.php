@@ -21,6 +21,9 @@ $homeController = new HomeController();
 use App\Controller\CollectionsController;
 $collectionsController = new CollectionsController();
 
+use App\Controller\CollectionController;
+$collectionController = new CollectionController();
+
 // Router
 switch ($path) {
     case '/':
@@ -34,6 +37,9 @@ switch ($path) {
         break;
     case '/collections':
         $collectionsController->collections();
+        break;
+    case '/collection':
+        $collectionController->collection();
         break;
     default :
         echo 'page 404';
