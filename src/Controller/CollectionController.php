@@ -20,7 +20,7 @@ class CollectionController extends AbstractController
             return $this->render('collection', 'Invertébrés - Paléo Curios', $data);
         }
 
-        if ($collection == "instects") {
+        if ($collection == "insects") {
             $data["breadcrumbs"] = "Insectes";
             return $this->render('collection', 'Insectes - Paléo Curios', $data);
         }
@@ -30,7 +30,7 @@ class CollectionController extends AbstractController
             return $this->render('collection', 'Plantes - Paléo Curios', $data);
         }
 
-        if ($collection == "other_fossils") {
+        if ($collection == "other-fossils") {
             $data["breadcrumbs"] = "Autres fossiles";
             return $this->render('collection', 'Autres fossiles - Paléo Curios', $data);
         }

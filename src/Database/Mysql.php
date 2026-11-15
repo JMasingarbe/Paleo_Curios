@@ -7,7 +7,7 @@ class Mysql
     public static function connectBdd(): \PDO
     {
         $hostValue = $_ENV["DATABASE_HOST"] ?? "localhost";
-        $port = $_ENV["DATABASE_PORT"] ?? null;
+        $port = $_ENV["DATABASE_HOST_PORT"] ?? null;
 
         if ($port === null && str_contains($hostValue, ':')) {
             [$hostValue, $port] = explode(':', $hostValue, 2);

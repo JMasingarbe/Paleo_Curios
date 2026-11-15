@@ -16,7 +16,7 @@
     <main>
         <!-- Breadcrumbs -->
         <ul class="breadcrumbs">
-            <li><a href="articles.php">Articles</a></li>
+            <li><a href="/articles">Articles</a></li>
             <li>Titre de l'article</li>
         </ul>
 
