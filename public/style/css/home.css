@@ -54,23 +54,21 @@
     flex-direction: column;
     align-items: start;
   }
-  main #random_fossil article#random_fossil_card {
+  main #random_fossil #random_fossil_card {
     align-self: center;
-    width: 75vw;
-    max-width: 500px;
     display: flex;
   }
 }
 @media screen and (max-width: 1280px) and (max-width: 600px) {
-  main #random_fossil article#random_fossil_card {
+  main #random_fossil #random_fossil_card {
     flex-direction: column;
   }
-  main #random_fossil article#random_fossil_card div {
+  main #random_fossil #random_fossil_card div {
     align-self: center;
   }
 }
 @media screen and (max-width: 1280px) {
-  main #random_fossil article#random_fossil_card #random_fossil_description {
+  main #random_fossil #random_fossil_card #random_fossil_description {
     margin: 0.5rem;
     line-height: 1.8;
   }

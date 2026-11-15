@@ -1,14 +1,27 @@
 @charset "UTF-8";
+@font-face {
+  font-family: Alegreya;
+  src: url(../../asset/font/Alegreya/Alegreya-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: Source Code Pro;
+  src: url(../../asset/font/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf);
+}
+main *:focus-visible {
+  outline: 3px solid #1C377E;
+  border-radius: 0.3rem;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: "Source Code Pro", monospace;
+  font-family: Source Code Pro;
   color: #050100;
   background-color: #FAE9D2;
 }
 
 h3, h2, h1 {
-  font-family: "Alegreya", serif;
+  font-family: Alegreya;
 }
 
 a {
@@ -21,7 +34,7 @@ header, footer {
   align-items: center;
   color: #FAE9D2;
   background-color: #050100;
-  font-family: "Source Code Pro", monospace;
+  font-family: Source Code Pro;
 }
 header img, footer img {
   width: 10vw;
@@ -40,7 +53,7 @@ header ul li a, footer ul li a {
 header ul li:hover, footer ul li:hover {
   transform: scale(1.2);
 }
-header ul li:hover a, footer ul li:hover a {
+header ul li:hover, footer ul li:hover {
   text-decoration-color: #E7512C;
   text-decoration-line: underline;
 }
@@ -65,7 +78,8 @@ header ul li:hover a, footer ul li:hover a {
     background-color: #050100;
     border: none;
   }
-  header #phone_nav_button div {
+  header #phone_nav_button span {
+    display: block;
     width: 50vw;
     max-width: 4rem;
     height: 0.4rem;
@@ -75,19 +89,19 @@ header ul li:hover a, footer ul li:hover a {
     transition: 0.4s;
     /* Rotate first bar */
   }
-  header #phone_nav_button div:nth-child(1).menu_icon_animation {
+  header #phone_nav_button span:nth-child(1).menu_icon_animation {
     transform: translate(0, 0.45rem) rotate(-45deg);
   }
-  header #phone_nav_button div {
+  header #phone_nav_button span {
     /* Fade out the second bar */
   }
-  header #phone_nav_button div:nth-child(2).menu_icon_animation {
+  header #phone_nav_button span:nth-child(2).menu_icon_animation {
     display: none;
   }
-  header #phone_nav_button div {
+  header #phone_nav_button span {
     /* Rotate last bar */
   }
-  header #phone_nav_button div:nth-child(3).menu_icon_animation {
+  header #phone_nav_button span:nth-child(3).menu_icon_animation {
     transform: translate(0, -0.45rem) rotate(45deg);
   }
   header nav {
@@ -197,6 +211,18 @@ article p {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+article.large_card {
+  max-width: 600px;
+}
+article.large_card h3 {
+  white-space: normal;
+  overflow: visible;
+}
+article.large_card p {
+  width: auto;
+  white-space: normal;
+  overflow: visible;
+}
 article {
   transition: transform 0.2s;
 }
@@ -254,7 +280,7 @@ article:hover {
 .breadcrumbs li a:hover {
   transform: scale(1);
 }
-.breadcrumbs li a:hover a {
+.breadcrumbs li a:hover {
   text-decoration-color: #E7512C;
   text-decoration-line: underline;
 }
