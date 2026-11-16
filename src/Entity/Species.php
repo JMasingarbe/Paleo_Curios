@@ -32,7 +32,7 @@ class Species
     }
 
     // Set functions
-    public function setId(int $id): void
+    public function setId(?int $id): void
     {
         $this->id = $id;
     }
@@ -42,8 +42,19 @@ class Species
         $this->name = $name;
     }
 
-    public function setLink(string $link): void
+    public function setLink(?string $link): void
     {
         $this->link = $link;
+    }
+
+    public static function hydrate(array $data): Species
+    {
+        $species = new Species($data["species_name"]);
+
+        $species->setId($data["id_species"] ?? null);
+
+        $species->setLink($data["species_link"] ?? null);
+
+        return $species;
     }
 }

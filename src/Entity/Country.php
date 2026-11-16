@@ -35,7 +35,7 @@ class Country
     }
 
     // Set functions
-    public function setId(int $id): void
+    public function setId(?int $id): void
     {
         $this->id = $id;
     }
@@ -50,7 +50,7 @@ class Country
         $this->continent = $continent;
     }
 
-    // Méthodes
+    // Methods
 
     public static function hydrate(array $data): Country
     {
@@ -65,6 +65,7 @@ class Country
         );
 
         $country->setId($data["id_country"] ?? null);
+        
         return $country;
     }
 }

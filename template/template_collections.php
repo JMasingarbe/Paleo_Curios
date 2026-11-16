@@ -43,9 +43,9 @@
                         <select name="continent" id="continent">
                             <option value="">Aucun sélectionné</option>
                             <option value="africa">Afrique</option>
-                            <option value="north_america">Amérique du Nord</option>
-                            <option value="south_america">Amérique du Sud</option>
-                            <option value="antartica">Antarctique</option>
+                            <option value="north-america">Amérique du Nord</option>
+                            <option value="south-america">Amérique du Sud</option>
+                            <option value="antarctica">Antarctique</option>
                             <option value="asia">Asie</option>
                             <option value="europa">Europe</option>
                             <option value="oceania">Océanie</option>
@@ -61,7 +61,7 @@
                             <option value="invertebrates">Invertébrés</option>
                             <option value="insects">Insectes</option>
                             <option value="plants">Plantes</option>
-                            <option value="other_fossils">Autres</option>
+                            <option value="other-fossils">Autres</option>
                         </select>
                     </div>
 

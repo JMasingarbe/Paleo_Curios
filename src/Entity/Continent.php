@@ -26,7 +26,7 @@ class Continent
     }
 
     // Set functions
-    public function setId(int $id): void
+    public function setId(?int $id): void
     {
         $this->id = $id;
     }
@@ -36,7 +36,7 @@ class Continent
         $this->name = $name;
     }
 
-    // Méthodes
+    // Methods
 
     /**
      * Méthode statique qui transforme un tableau associatif en objet Continent

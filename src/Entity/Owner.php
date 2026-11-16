@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Entity\User;
+// use App\Entity\User;
 
 class Owner
 {
@@ -11,7 +11,7 @@ class Owner
     private ?string $first_name = null;
     private string $name;
     private string $email;
-    private ?User $user = null;
+    // private ?User $user = null;
 
     public function __construct(
         string $type,
@@ -49,28 +49,41 @@ class Owner
         return $this->email;
     }
 
-    public function setId(int $id) : void
+    public function setId(?int $id): void
     {
         $this->id = $id;
     }
 
-    public function setType(string $type) : void
+    public function setType(string $type): void
     {
         $this->type = $type;
     }
 
-    public function setFirstName(string $first_name) : void
+    public function setFirstName(?string $first_name): void
     {
         $this->first_name = $first_name;
     }
 
-    public function setName(string $name) : void
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    public function setEmail(string $email) : void
+    public function setEmail(string $email): void
     {
         $this->email = $email;
+    }
+
+    // Methods
+
+    public static function hydrate(array $data): Owner
+    {
+        $owner = new Owner($data["owner_type"], $data["owner_name"], $data["owner_email"]);
+
+        $owner->setFirstName($data["owner_first_name"] ?? null);
+
+        $owner->setId($data["id_owner"] ?? null);
+
+        return $owner;
     }
 }
