@@ -3,12 +3,17 @@
 namespace App\Controller;
 
 use App\Controller\AbstractController;
+use App\Repository\FossilRepository;
 
 class CollectionController extends AbstractController
 {
     public function collection(): mixed
     {
         $collection = $_GET["collection"];
+        
+        $fossilRepository = new FossilRepository();
+
+        $data = $fossilRepository->selectAllFossils();
         
         if ($collection == "vertebrates") {
             $data["breadcrumbs"] = "Vertébrés";

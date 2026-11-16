@@ -1,3 +1,7 @@
+<?php
+use App\Utils\Tools;
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -117,197 +121,28 @@
         <div id="collection_fossils">
 
             <!-- 24 fossils cards -->
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
+            <?php foreach ($data ?? [] as $fossil): ?>
+                <a href="<?= Tools::sanitize("/fossil?fossil-id=". $fossil->getId()) ?>">
+                    <article>
+                        <img src="https://placehold.co/200" alt="Photo du fossile">
+                        <h3><?= Tools::sanitize($fossil->getName()) ?></h3>
+                        <p>
+                            <?php if ($fossil->getPeriod() != null): ?>
+                                <?= Tools::sanitize($fossil->getPeriod()->getName()) ?>
+                            
 
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
+                            <?php elseif ($fossil->getDatingMin() != null): ?>
+                                <?php if ($fossil->getDatingMin() != $fossil->getDatingMax()): ?>
+                                    <?= Tools::sanitize($fossil->getDatingMin() . "Ma à " . $fossil->getDatingMax() . "Ma") ?>
+                                <?php else: ?>
+                                    <?= Tools::sanitize($fossil->getDatingMin() . "Ma") ?>
+                                <?php endif ?>
+                            <?php endif ?>
+                        </p>
+                    </article>
+                </a>
+            <?php endforeach ?>
 
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
-
-            <a href="fossil.php">
-                <article>
-                    <img src="https://placehold.co/200" alt="Photo du fossile">
-                    <h3>Nom du fossile</h3>
-                    <p>Datation</p>
-                </article>
-            </a>
             <h1 style="display: none;">Malheuresement nous n'avons aucun fossil qui remplissent ces critères.<br>Veuillez en essayer d'autres.</h1>
         </div>
 
