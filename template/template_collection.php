@@ -120,7 +120,7 @@ use App\Utils\Tools;
 
         <div id="collection_fossils">
 
-            <!-- 24 fossils cards -->
+            <!-- Fossils cards -->
             <?php foreach ($data ?? [] as $fossil): ?>
                 <a href="<?= Tools::sanitize("/fossil?fossil-id=". $fossil->getId()) ?>">
                     <article>
@@ -144,6 +144,10 @@ use App\Utils\Tools;
             <?php endforeach ?>
 
             <h1 style="display: none;">Malheuresement nous n'avons aucun fossil qui remplissent ces critères.<br>Veuillez en essayer d'autres.</h1>
+            
+            <?php if ($data["error"] ?? null != null): ?>
+                <h3><?= Tools::sanitize($data["error"] ?? "") ?></h3>
+            <?php endif ?>
         </div>
 
         <!-- Page nav -->

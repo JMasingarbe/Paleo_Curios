@@ -45,7 +45,7 @@ class FossilRepository {
             LEFT JOIN place AS exh ON exh.id_place = f.id_exhibition_place
             LEFT JOIN country AS exh_c ON exh_c.id_country = exh.id_country
             LEFT JOIN continent AS exh_con ON exh_con.id_continent = exh_c.id_continent
-            ORDER BY f.fossil_added_at ASC";
+            ORDER BY f.fossil_added_at DESC";
 
             $stmt = $this->connection->prepare($sql);
             $stmt->execute();

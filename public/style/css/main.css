@@ -190,6 +190,7 @@ article {
   box-shadow: 0.2rem 0.2rem 0.5rem #E7512C;
   border-radius: 15px 2.5px 15px 2.5px;
   max-width: 232px;
+  min-height: 265px;
 }
 article img {
   border-radius: 10px;
