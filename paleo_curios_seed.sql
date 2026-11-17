@@ -32,7 +32,10 @@
 --  À exécuter APRÈS db_paleocurios.sql, sur une base vide (base paleocurios).
 --
 --  Contenu : 100 fossiles, 56 espèces, 28 lieux, 10 propriétaires, 143 images,
---  45 favoris, 6 comptes utilisateurs et 3 articles.
+--  45 favoris, 5 comptes utilisateurs et 3 articles.
+--
+--  Aucun propriétaire (owner) ni aucun auteur (author) n'est rattaché à un compte
+--  utilisateur : owner.id_user et author.id_user sont tous à NULL.
 --
 --  Ce qui est fictif :
 --    - toutes les personnes, tous les e-mails et comptes utilisateurs ;
@@ -282,33 +285,34 @@ INSERT INTO geological_period (id_period, period_name, period_start, period_end)
 INSERT INTO `user` (id_user, user_email, user_pwd, user_created_at) VALUES
     (1, 'admin@paleo-curios.example',
         '$2y$10$koO8Q/xy0IbB/i7a0MNrme9miUK.eUi69i0gs4Ky15FONaQ./epcW', '2026-04-15 09:00:00'),
-    (2, 'camille.durand@example.org',   -- paléontologue vérifiée + autrice
+    (2, 'camille.durand@example.org',   -- paléontologue vérifiée
         '$2y$10$Qkx2KkMjK8dr0vX3p0Ta5.qPcpxidSlmW8lx7F5IB8heZZwu6iSGS', '2026-05-02 11:24:00'),
     (3, 'hugo.martin@example.org',      -- paléontologue vérifié
         '$2y$10$z5Fa4iTBHmdsSwfVyWmp5.bxpfMxIZfvyGInZpe4ZXAwYc14Gb6TO', '2026-05-18 16:40:00'),
     (4, 'lea.petit@example.org',        -- paléontologue en attente de validation
         '$2y$10$DPGelOffQcgU8VeIjk3crea6b1NiYdXz2bSDSVRN4qNcPCBR/poba', '2026-10-21 08:12:00'),
-    (5, 'contact@fossilia.example',     -- propriétaire (entreprise)
-        '$2y$10$cY.lQEwRP367LiEvkqFvNOjXO4aWwbO2Pv8mMerwKLsBkeRrVwZUi', '2026-05-10 14:05:00'),
-    (6, 'nadia.benali@example.org',     -- paléontologue vérifiée + propriétaire
+    -- Pas de compte n° 5 : il est laissé libre pour garder les mêmes identifiants
+    -- que dans les versions précédentes de ce fichier.
+    (6, 'nadia.benali@example.org',     -- paléontologue vérifiée
         '$2y$10$iZL/t6GxdsVuT1NodzP9XuQCG65llZHrner89oQY6gGLPvVXGrDIC', '2026-06-01 10:30:00');
 
+-- Les rôles author et owner existent déjà mais ne sont attribués à personne :
+-- ils serviront quand un auteur ou un propriétaire pourra avoir un compte.
 INSERT INTO `role` (id_role, role_name) VALUES
     (1, 'admin'),
     (2, 'palaeontologist'),
     (3, 'author'),
     (4, 'owner');
 
--- Rôles des utilisateurs : certains en cumulent plusieurs.
+-- Rôles des utilisateurs
 INSERT INTO user_role (id_user, id_role) VALUES
-    (1, 1),           -- admin
-    (2, 2), (2, 3),   -- Camille : paléontologue + autrice
-    (3, 2),           -- Hugo : paléontologue
-    (4, 2),           -- Léa : paléontologue (pas encore vérifiée)
-    (5, 4),           -- Fossilia : propriétaire
-    (6, 2), (6, 4);   -- Nadia : paléontologue + propriétaire
+    (1, 1),   -- admin
+    (2, 2),   -- Camille : paléontologue
+    (3, 2),   -- Hugo : paléontologue
+    (4, 2),   -- Léa : paléontologue (pas encore vérifiée)
+    (6, 2);   -- Nadia : paléontologue
 
--- Profils paléontologues (l'admin et Fossilia n'en ont pas).
+-- Profils paléontologues (l'admin n'en a pas).
 INSERT INTO palaeontologist (id_user, palaeontologist_first_name, palaeontologist_last_name,
                              palaeontologist_verified) VALUES
     (2, 'Camille', 'Durand', 1),
@@ -321,10 +325,13 @@ INSERT INTO palaeontologist (id_user, palaeontologist_first_name, palaeontologis
 --  4. PROPRIÉTAIRES ET FOSSILES
 -- =============================================================================
 
--- owner_email n'est rempli que pour les propriétaires SANS compte.
+-- Aucun propriétaire n'est rattaché à un compte (id_user à NULL) :
+-- owner_email est donc toujours rempli, c'est le seul moyen de les contacter.
+-- Nadia Benali est aussi paléontologue (compte n° 6), mais sa fiche de
+-- propriétaire est indépendante de ce compte.
 INSERT INTO owner (id_owner, owner_type, owner_first_name, owner_name, owner_email, id_user) VALUES
-    (1, 'person', 'Nadia', 'Benali', NULL, 6),
-    (2, 'company', NULL, 'Fossilia', NULL, 5),
+    (1, 'person', 'Nadia', 'Benali', 'nadia.benali@example.org', NULL),
+    (2, 'company', NULL, 'Fossilia', 'contact@fossilia.example', NULL),
     (3, 'museum', NULL, 'Muséum de Belcastel', 'contact@museum-belcastel.example', NULL),
     (4, 'university', NULL, 'Université de la Garonne', 'collections@univ-garonne.example', NULL),
     (5, 'person', 'Bernard', 'Lefèvre', 'bernard.lefevre@example.net', NULL),
@@ -1276,9 +1283,11 @@ INSERT INTO picture (id_picture, picture_path, picture_alt, picture_title,
 --  6. ARTICLES
 -- =============================================================================
 
--- Camille Durand a un compte (id_user 2) ; les deux autres auteurs sont extérieurs.
+-- Aucun auteur n'est rattaché à un compte (id_user à NULL).
+-- Camille Durand est aussi paléontologue (compte n° 2), mais sa fiche d'autrice
+-- est indépendante de ce compte.
 INSERT INTO author (id_author, author_first_name, author_last_name, id_user) VALUES
-    (1, 'Camille', 'Durand', 2),
+    (1, 'Camille', 'Durand', NULL),
     (2, 'Thomas',  'Girard', NULL),
     (3, 'Inès',    'Roux',   NULL);
 

@@ -3,12 +3,24 @@
 namespace App\Controller;
 
 use App\Controller\AbstractController;
+use App\Service\CollectionService;
 
 class CollectionController extends AbstractController
 {
+    private CollectionService $collection_service;
+
+    public function __construct()
+    {
+        $this->collection_service = new CollectionService;
+    }
+
     public function collection(): mixed
     {
-        $collection = $_GET["collection"];
+        if (isset($_GET["collection"])){
+            $collection = $_GET["collection"];
+        }
+
+        $data = $this->collection_service->getFossils($_GET);
         
         if ($collection == "vertebrates") {
             $data["breadcrumbs"] = "Vertébrés";

@@ -42,7 +42,7 @@ class Period
     }
 
     // Set functions
-    public function setId(int $id): void
+    public function setId(?int $id): void
     {
         $this->id = $id;
     }
@@ -60,5 +60,16 @@ class Period
     public function setEnd(float $end): void
     {
         $this->end = $end;
+    }
+
+    // Methods
+
+    public static function hydrate(array $data): Period
+    {
+        $period = new Period($data["period_name"], $data["period_start"], $data["period_end"]);
+
+        $period->setId($data["id_period"] ?? null);
+
+        return $period;
     }
 }

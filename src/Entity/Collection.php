@@ -14,7 +14,7 @@ class Collection
         $this->name = $name;
     }
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -24,7 +24,7 @@ class Collection
         return $this->name;
     }
 
-    public function setId(int $id): void
+    public function setId(?int $id): void
     {
         $this->id = $id;
     }
@@ -32,5 +32,16 @@ class Collection
     public function setName(string $name): void
     {
         $this->name = $name;
+    }
+
+    // Methods
+
+    public static function hydrate(array $data): Collection
+    {
+        $collection = new Collection($data["collection_name"]);
+
+        $collection->setId($data["id_collection"] ?? null);
+        
+        return $collection;
     }
 }

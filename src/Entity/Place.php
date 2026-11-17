@@ -83,7 +83,7 @@ class Place
     }
 
     // Set functions
-    public function setId(int $id): void
+    public function setId(?int $id): void
     {
         $this->id = $id;
     }
@@ -93,37 +93,37 @@ class Place
         $this->name = $name;
     }
 
-    public function setLink(string $link): void
+    public function setLink(?string $link): void
     {
         $this->link = $link;
     }
 
-    public function setAddress(string $address): void
+    public function setAddress(?string $address): void
     {
         $this->address = $address;
     }
 
-    public function setPostCode(string $post_code): void
+    public function setPostCode(?string $post_code): void
     {
         $this->post_code = $post_code;
     }
 
-    public function setCity(string $city): void
+    public function setCity(?string $city): void
     {
         $this->city = $city;
     }
 
-    public function setRegion(string $region): void
+    public function setRegion(?string $region): void
     {
         $this->region = $region;
     }
 
-    public function setLatitude(float $latitude): void
+    public function setLatitude(?float $latitude): void
     {
         $this->latitude = $latitude;
     }
 
-    public function setLongitude(float $longitude): void
+    public function setLongitude(?float $longitude): void
     {
         $this->longitude = $longitude;
     }
@@ -133,8 +133,42 @@ class Place
         $this->is_sensitive = $is_sensitive;
     }
 
-    public function setCountry(Country $country): void
+    public function setCountry(?Country $country): void
     {
         $this->country = $country;
+    }
+
+    // Methods
+
+    public static function hydrate(array $data): Place
+    {
+        $place = new Place($data["place_name"], $data["place_is_sensitive"]);
+
+        $place->setId($data["id_place"] ?? null);
+
+        $place->setLink($data["place_link"] ?? null);
+
+        $place->setAddress($data["place_address"] ?? null);
+
+        $place->setPostCode($data["place_postcode"] ?? null);
+
+        $place->setCity($data["place_city"] ?? null);
+
+        $place->setRegion($data["place_region"] ?? null);
+
+        $place->setLatitude($data["place_latitude"] ?? null);
+
+        $place->setLongitude($data["place_longitude"] ?? null);
+
+        if (isset($data["id_country"])){
+            $place->setCountry(Country::hydrate([
+                "id_country"=> $data["id_country"], 
+                "country_name"=> $data["country_name"], 
+                "id_continent"=> $data["id_continent"],
+                "continent_name"=> $data["continent_name"]
+            ]));
+        }
+
+        return $place;
     }
 }
