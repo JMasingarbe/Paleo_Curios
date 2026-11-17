@@ -1,14 +1,14 @@
     <header>
-        <img src="./asset/noun-dragonfly-1455556.png" alt="Logo de Paléo Curios">
+        <img src="./asset/Logo-Paleo-Curios.webp" alt="Logo de Paléo Curios">
         <!-- phone menu's button -->
-        <button type="button" id="phone_nav_button">
+        <button type="button" id="phone_nav_button" aria-label="Menu" aria-expanded="false" aria-controls="main_nav">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
         </button>
-        <nav>
+        <nav aria-label="Navigation principale">
             <!-- nav links -->
-            <ul>
+            <ul id="main_nav">
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/articles">Articles</a></li>
                 <li><a href="/collections">Collections</a></li>

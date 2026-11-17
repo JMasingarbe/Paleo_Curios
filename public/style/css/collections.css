@@ -108,13 +108,19 @@ main form fieldset label[for=is_exposed] #custom_checkbox_exposed:hover {
   cursor: pointer;
 }
 main form fieldset input[type=checkbox] {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
 }
 main form fieldset input[type=checkbox]:checked + label[for=is_exposed] #custom_checkbox_exposed {
   background-color: #1C377E;
 }
 main form fieldset input[type=checkbox]:checked + label[for=is_exposed] #custom_checkbox_exposed::after {
   display: block;
+}
+main form fieldset input[type=checkbox]:focus-visible + label[for=is_exposed] #custom_checkbox_exposed {
+  outline: 3px solid #1C377E;
 }
 main form fieldset select {
   text-align: center;

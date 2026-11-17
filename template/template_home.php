@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="./asset/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style/css/main.css">
     <link rel="stylesheet" href="./style/css/home.css">
+    <meta name="description" content="Paléo Curios répertorie des fossiles du monde entier : vertébrés, invertébrés, insectes et plantes. Découvrez nos articles et les fossiles tendances.">
     <title><?= $title ?? "" ?></title>
 </head>
 
@@ -21,7 +22,7 @@
             <p id="article_author">Auteur.ice</p>
             <img src="https://placehold.co/400" alt="Photo de l'article">
             <p>Introduction.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente odit harum similique corporis commodi ad aliquam nulla fugiat nemo atque veniam esse saepe, vitae enim deleniti, dolores iste explicabo praesentium maxime? Nobis aliquid facere autem quam, asperiores aliquam cupiditate eligendi suscipit accusamus debitis fugit, consequatur voluptatem, quidem cumque qui iure sit velit itaque adipisci quisquam magnam architecto magni alias. Iusto, assumenda. Aliquam deserunt autem earum ad nobis natus eligendi laudantium animi molestias, qui dolorum deleniti nostrum quibusdam temporibus nisi? Labore totam dolor quo nihil officia! Ullam fuga optio rerum! Corporis exercitationem doloremque, consequatur laudantium veniam quisquam amet! Natus, facere sunt!</p>
-            <a href="article" class="sec_link_button">Lire la suite</a>
+            <a href="/article?article-id=<?= "#" ?>" class="sec_link_button">Lire la suite</a>
         </section>
 
         <div class="divider"></div>
@@ -30,7 +31,7 @@
         <section id="trend_fossils">
             <h2>Nos fossiles tendances</h2>
             <div>
-                <a href="fossil">
+                <a href="/fossil?fossil-id=<?= "#" ?>">
                     <article>
                         <img src="https://placehold.co/200" alt="Photo du fossile">
                         <h3>Nom du fossile</h3>
@@ -38,7 +39,7 @@
                     </article>
                 </a>
     
-                <a href="fossil">
+                <a href="/fossil?fossil-id=<?= "#" ?>">
                     <article>
                         <img src="https://placehold.co/200" alt="Photo du fossile">
                         <h3>Nom du fossile</h3>
@@ -46,7 +47,7 @@
                     </article>
                 </a>
     
-                <a href="fossil">
+                <a href="/fossil?fossil-id=<?= "#" ?>">
                     <article>
                         <img src="https://placehold.co/200" alt="Photo du fossile">
                         <h3>Nom du fossile</h3>
@@ -61,7 +62,7 @@
         <!-- Random fossil -->
         <section id="random_fossil">
             <h2>Fossile au hasard</h2>
-            <a href="">
+            <a href="/fossil?fossil-id=<?= "#" ?>">
                 <article id="random_fossil_card" class="large_card">
                     <div>
                         <h3>Nom du fossile</h3>

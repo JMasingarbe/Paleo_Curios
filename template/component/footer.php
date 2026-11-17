@@ -1,16 +1,12 @@
 <footer>
-    <nav>
+    <nav aria-label="Navigation de pied de page">
         <ul>
-            <div>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/articles">Articles</a></li>
-                <li><a href="/collections">Collections</a></li>
-                <li><a href="/about">À propos</a></li>
-            </div>
-            <div>
-                <li><a href="/contact-faq">Contact & FAQ</a></li>
-                <li><a href="/legal-notices">Mentions légales</a></li>
-            </div>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/articles">Articles</a></li>
+            <li><a href="/collections">Collections</a></li>
+            <li><a href="/about">À propos</a></li>
+            <li><a href="/contact-faq">Contact & FAQ</a></li>
+            <li><a href="/legal-notices">Mentions légales</a></li>
         </ul>
     </nav>
     <p>© Paléo Curios 2026 - Tous droits réservés</p>

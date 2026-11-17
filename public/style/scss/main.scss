@@ -27,6 +27,11 @@ a {
     text-decoration: none;
 }
 
+img {
+    height: auto;
+    width: auto;
+}
+
 header, footer {
     display: flex;
     align-items: center;
@@ -117,6 +122,10 @@ header, footer {
                         font-weight: 800;
                     }
                 }
+
+                &.is_expanded {
+                    display: flex;
+                }
             }
         }
     }
@@ -162,22 +171,12 @@ header, footer {
         padding: 1vh 4vw;
     
         nav ul {
-            display: grid;
-            grid-template-rows: 1fr 1fr;
+            display: flex;
+            flex-wrap: wrap;
             gap: 1.5rem;
+            max-width: 400px;
             padding: 0;
-            div:first-child {
-                grid-area: 1;
-                display: flex;
-                justify-content: center;
-                gap: 2rem;
-            }
-            div:last-child {
-                grid-area: 2;
-                display: flex;
-                justify-content: center;
-                gap: 2rem;
-            }
+            justify-content: center;
         }
     }
 }

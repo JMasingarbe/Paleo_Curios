@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="./asset/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style/css/main.css">
     <link rel="stylesheet" href="./style/css/collections.css">
+    <meta name="description" content="Parcourez les collections de fossiles de Paléo Curios : vertébrés, invertébrés, insectes, plantes… Filtrez par continent, pays ou fossiles exposés.">
     <title><?= $title ?? "" ?></title>
 </head>
 
@@ -34,7 +35,7 @@
                     <!-- Checkbox: fossil is exposed ? -->
                     <div>
                         <input type="checkbox" name="is_exposed" id="is_exposed">
-                        <label for="is_exposed"><div id="custom_checkbox_exposed"></div> Exposé</label>
+                        <label for="is_exposed"><span id="custom_checkbox_exposed"></span> Exposé</label>
                     </div>
 
                     <!-- Dropdown continent -->
@@ -80,35 +81,35 @@
         <section id="particulars_collections">
             <a href="/collection?collection=vertebrates" id="vertebrate">
                 <article>
-                    <img src="./asset/pictures/Archaeopteryx_lithographica_(Berlin_specimen).jpg" alt="Photo de la collection des fossiles de vertébrés">
+                    <img src="./asset/pictures/Cover_vertebrate_fossils.webp" alt="Photo de la collection des fossiles de vertébrés" loading="lazy">
                     <h2>Vertébrés</h2>
                 </article>
             </a>
     
             <a href="/collection?collection=invertebrates" id="invertebrate">
                 <article>
-                    <img src="./asset/pictures/Alokistocare_sp_4.JPG" alt="Photo de la collection des fossiles de invertébrés">
+                    <img src="./asset/pictures/Cover_invertebrate_fossils.webp" alt="Photo de la collection des fossiles de invertébrés" loading="lazy">
                     <h2>Invertébrés</h2>
                 </article>
             </a>
     
             <a href="/collection?collection=insects" id="insect">
                 <article>
-                    <img src="./asset/pictures/Meganeura_monyi_au_Museum_de_Toulouse.jpg" alt="Photo de la collection des fossiles de insectes">
+                    <img src="./asset/pictures/Cover_insect_fossils.webp" alt="Photo de la collection des fossiles de insectes" loading="lazy">
                     <h2>Insectes</h2>
                 </article>
             </a>
     
             <a href="/collection?collection=plants" id="plant">
                 <article>
-                    <img src="./asset/pictures/Caesalpina_eocenica_322.jpg" alt="Photo de la collection des fossiles de plantes">
+                    <img src="./asset/pictures/Cover_plant_fossils.webp" alt="Photo de la collection des fossiles de plantes" loading="lazy">
                     <h2>Plantes</h2>
                 </article>
             </a>
     
             <a href="/collection?collection=other-fossils" id="other_fossils">
                 <article>
-                    <img src="./asset/pictures/il_1588xN.3078041578_40cs.webp" alt="Photo de la collection des autres fossiles">
+                    <img src="./asset/pictures/Cover_other_fossils.webp" alt="Photo de la collection des autres fossiles" loading="lazy">
                     <h2>Autres</h2>
                 </article>
             </a>
@@ -116,7 +117,7 @@
 
         <a href="/collection" id="all_collections"><h2>Toutes les collections</h2></a>
 
-        <a href="statistics.php" class="link_button">Statistiques générales</a>
+        <a href="/statistics" class="link_button">Statistiques générales</a>
     </main>
 
     <!-- Footer -->

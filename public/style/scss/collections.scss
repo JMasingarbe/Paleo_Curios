@@ -92,7 +92,7 @@ main {
                     border: solid 1px $dark-color;
                     border-radius: 5px;
                     background-color: color.adjust($light-color, $lightness: 7.5%);
-                    
+                        
                     position: relative;
                     &::after {
                         content: "";
@@ -106,21 +106,29 @@ main {
                         border-width: 0 3px 3px 0;
                         transform: rotate(45deg);
                     }
-                    
+                        
                     &:hover {
                         cursor: pointer;
                     }
                 }
             }
             
-            input[type="checkbox"] {
-                display: none;
+           input[type="checkbox"] {
+                position:absolute; 
+                width:1px; 
+                height:1px; 
+                clip-path: inset(50%); 
                 &:checked + label[for="is_exposed"] {
                     #custom_checkbox_exposed {
                         background-color: $sec-accent-color;
                         &::after {
                             display: block;
                         }
+                    }
+                }
+                &:focus-visible + label[for="is_exposed"] {
+                    #custom_checkbox_exposed  {
+                        outline: 3px solid $sec-accent-color;
                     }
                 }
             }

@@ -42,6 +42,7 @@ switch ($path) {
         $collectionController->collection();
         break;
     default :
+        http_response_code(404);
         echo 'page 404';
         break;
 }
