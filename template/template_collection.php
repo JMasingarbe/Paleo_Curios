@@ -88,29 +88,27 @@ use App\Utils\Tools;
             <section id="trend_fossils">
                 <h2>Les fossiles tendances de la collection</h2>
                 <div>
-                    <a href="fossil.php">
-                        <article>
-                            <img src="https://placehold.co/200" alt="Photo du fossile">
-                            <h3>Nom du fossile</h3>
-                            <p>Datation</p>
-                        </article>
-                    </a>
+                    <?php foreach ($data["trend"] ?? [] as $fossil): ?>
+                        <a href="<?= Tools::sanitize("/fossil?fossil-id=". $fossil->getId()) ?>">
+                            <article>
+                                <img src="https://placehold.co/200" alt="Photo du fossile">
+                                <h3><?= Tools::sanitize($fossil->getName()) ?></h3>
+                                <p>
+                                    <?php if ($fossil->getPeriod() != null): ?>
+                                        <?= Tools::sanitize($fossil->getPeriod()->getName()) ?>
+                                    
 
-                    <a href="fossil.php">
-                        <article>
-                            <img src="https://placehold.co/200" alt="Photo du fossile">
-                            <h3>Nom du fossile</h3>
-                            <p>Datation</p>
-                        </article>
-                    </a>
-
-                    <a href="fossil.php">
-                        <article>
-                            <img src="https://placehold.co/200" alt="Photo du fossile">
-                            <h3>Nom du fossile</h3>
-                            <p>Datation</p>
-                        </article>
-                    </a>
+                                    <?php elseif ($fossil->getDatingMin() != null): ?>
+                                        <?php if ($fossil->getDatingMin() != $fossil->getDatingMax()): ?>
+                                            <?= Tools::sanitize($fossil->getDatingMin() . "Ma à " . $fossil->getDatingMax() . "Ma") ?>
+                                        <?php else: ?>
+                                            <?= Tools::sanitize($fossil->getDatingMin() . "Ma") ?>
+                                        <?php endif ?>
+                                    <?php endif ?>
+                                </p>
+                            </article>
+                        </a>
+                    <?php endforeach ?>
                 </div>
             </section>
         </div>
@@ -121,7 +119,7 @@ use App\Utils\Tools;
         <div id="collection_fossils">
 
             <!-- Fossils cards -->
-            <?php foreach ($data ?? [] as $fossil): ?>
+            <?php foreach ($data["fossils"] ?? [] as $fossil): ?>
                 <a href="<?= Tools::sanitize("/fossil?fossil-id=". $fossil->getId()) ?>">
                     <article>
                         <img src="https://placehold.co/200" alt="Photo du fossile">
@@ -143,15 +141,13 @@ use App\Utils\Tools;
                 </a>
             <?php endforeach ?>
 
-            <h1 style="display: none;">Malheuresement nous n'avons aucun fossil qui remplissent ces critères.<br>Veuillez en essayer d'autres.</h1>
-            
-            <?php if ($data["error"] ?? null != null): ?>
-                <h3><?= Tools::sanitize($data["error"] ?? "") ?></h3>
+            <?php if (empty($data["fossils"])): ?>
+                <p>Malheureusement, nous n'avons aucun fossile qui remplisse ces critères.<br>Veuillez en essayer d'autres.</p>
             <?php endif ?>
         </div>
 
         <!-- Page nav -->
-        <div class="catalogue_nav">
+        <div class="catalogue_nav" style="display: none;">
             <div id="back_buttons">
                 <button type="button"><img src="./asset/icons/noun-chevron-left-4213614.png" alt="Icône "></button>
                 <button type="button"><img src="./asset/icons/noun-arrow-back-4971230.png" alt="Icône "></button>
@@ -176,6 +172,6 @@ use App\Utils\Tools;
 
     <!-- Scripts -->
     <script src="./script/main.js"></script>
-    <!-- <script type="module" src="./script/collection.js"></script> -->
+    <script type="module" src="./script/collection.js"></script>
 </body>
 </html>

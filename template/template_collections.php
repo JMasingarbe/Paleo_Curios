@@ -114,7 +114,7 @@
             </a>
         </section>
 
-        <a href="/collection?collection=all-collections" id="all_collections"><h2>Toutes les collections</h2></a>
+        <a href="/collection" id="all_collections"><h2>Toutes les collections</h2></a>
 
         <a href="statistics.php" class="link_button">Statistiques générales</a>
     </main>

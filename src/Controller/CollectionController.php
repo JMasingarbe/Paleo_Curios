@@ -3,17 +3,24 @@
 namespace App\Controller;
 
 use App\Controller\AbstractController;
-use App\Repository\FossilRepository;
+use App\Service\CollectionService;
 
 class CollectionController extends AbstractController
 {
+    private CollectionService $collection_service;
+
+    public function __construct()
+    {
+        $this->collection_service = new CollectionService;
+    }
+
     public function collection(): mixed
     {
-        $collection = $_GET["collection"];
-        
-        $fossilRepository = new FossilRepository();
+        if (isset($_GET["collection"])){
+            $collection = $_GET["collection"];
+        }
 
-        $data = $fossilRepository->selectAllFossils();
+        $data = $this->collection_service->getFossils($_GET);
         
         if ($collection == "vertebrates") {
             $data["breadcrumbs"] = "Vertébrés";
