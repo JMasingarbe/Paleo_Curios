@@ -6,16 +6,26 @@ main {
     flex-direction: column;
     align-items: center;
 
-    .breadcrumbs  {
+    nav {
         align-self: start;
-        margin-top: 0;
-        margin-bottom: 1.5rem;
-        a {
-            display: inline-block;
-            transition: transform 0.2s;
-            &:hover {
-                transform: scale(1.1);
-                text-decoration: underline $accent-color;
+
+        .breadcrumbs  {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            a {
+                display: inline-block;
+                transition: transform 0.2s;
+                &:hover {
+                    transform: scale(1.1);
+                    text-decoration: underline $accent-color;
+                }
+            }
+
+            h1 {
+                display: inline;
+                font-weight: normal;
+                font-size: 1rem;
+                font-family: Source Code Pro;
             }
         }
     }

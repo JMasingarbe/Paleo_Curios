@@ -11,18 +11,26 @@ main {
   flex-direction: column;
   align-items: center;
 }
-main .breadcrumbs {
+main nav {
   align-self: start;
+}
+main nav .breadcrumbs {
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
-main .breadcrumbs a {
+main nav .breadcrumbs a {
   display: inline-block;
   transition: transform 0.2s;
 }
-main .breadcrumbs a:hover {
+main nav .breadcrumbs a:hover {
   transform: scale(1.1);
   text-decoration: underline #E7512C;
+}
+main nav .breadcrumbs h1 {
+  display: inline;
+  font-weight: normal;
+  font-size: 1rem;
+  font-family: Source Code Pro;
 }
 main button {
   background-color: transparent;

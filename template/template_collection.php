@@ -10,6 +10,7 @@ use App\Utils\Tools;
     <link rel="shortcut icon" href="./asset/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style/css/main.css">
     <link rel="stylesheet" href="./style/css/collection.css">
+    <meta name="description" content="<?= htmlspecialchars($data["meta_description"] ?? "") ?>">
     <title><?= $title ?? "" ?></title>
 </head>
 
@@ -20,10 +21,12 @@ use App\Utils\Tools;
     <!-- Main -->
     <main>
         <!-- Breadcrumbs -->
-        <ul class="breadcrumbs">
-            <li><a href="/collections">Collections</a></li>
-            <li><?= $data["breadcrumbs"] ?? "" ?></li>
-        </ul>
+        <nav aria-label="Fils d'arianne">
+            <ol class="breadcrumbs">
+                <li><a href="/collections">Collections</a></li>
+                <li><h1><?= htmlspecialchars($data["breadcrumbs"] ?? "Collection") ?></h1></li>
+            </ol>
+        </nav>
 
         <div>
             <search id="searchbar_filters">
@@ -40,7 +43,7 @@ use App\Utils\Tools;
                         <!-- Checkbox: fossil is exposed ? -->
                         <div>
                             <input type="checkbox" name="is_exposed" id="is_exposed">
-                            <label for="is_exposed"><div id="custom_checkbox_exposed"></div> Exposé</label>
+                            <label for="is_exposed"><span id="custom_checkbox_exposed"></span> Exposé</label>
                         </div>
 
                         <!-- Dropdown continent -->
@@ -89,20 +92,20 @@ use App\Utils\Tools;
                 <h2>Les fossiles tendances de la collection</h2>
                 <div>
                     <?php foreach ($data["trend"] ?? [] as $fossil): ?>
-                        <a href="<?= Tools::sanitize("/fossil?fossil-id=". $fossil->getId()) ?>">
+                        <a href="<?= htmlspecialchars("/fossil?fossil-id=". $fossil->getId()) ?>">
                             <article>
-                                <img src="https://placehold.co/200" alt="Photo du fossile">
-                                <h3><?= Tools::sanitize($fossil->getName()) ?></h3>
+                                <img src="https://placehold.co/200" alt="Photo du fossile" loading="lazy">
+                                <h3><?= htmlspecialchars($fossil->getName()) ?></h3>
                                 <p>
                                     <?php if ($fossil->getPeriod() != null): ?>
-                                        <?= Tools::sanitize($fossil->getPeriod()->getName()) ?>
+                                        <?= htmlspecialchars($fossil->getPeriod()->getName()) ?>
                                     
 
                                     <?php elseif ($fossil->getDatingMin() != null): ?>
                                         <?php if ($fossil->getDatingMin() != $fossil->getDatingMax()): ?>
-                                            <?= Tools::sanitize($fossil->getDatingMin() . "Ma à " . $fossil->getDatingMax() . "Ma") ?>
+                                            <?= htmlspecialchars($fossil->getDatingMin() . "Ma à " . $fossil->getDatingMax() . "Ma") ?>
                                         <?php else: ?>
-                                            <?= Tools::sanitize($fossil->getDatingMin() . "Ma") ?>
+                                            <?= htmlspecialchars($fossil->getDatingMin() . "Ma") ?>
                                         <?php endif ?>
                                     <?php endif ?>
                                 </p>
@@ -120,20 +123,20 @@ use App\Utils\Tools;
 
             <!-- Fossils cards -->
             <?php foreach ($data["fossils"] ?? [] as $fossil): ?>
-                <a href="<?= Tools::sanitize("/fossil?fossil-id=". $fossil->getId()) ?>">
+                <a href="<?= htmlspecialchars("/fossil?fossil-id=". $fossil->getId()) ?>">
                     <article>
-                        <img src="https://placehold.co/200" alt="Photo du fossile">
-                        <h3><?= Tools::sanitize($fossil->getName()) ?></h3>
+                        <img src="https://placehold.co/200" alt="Photo du fossile" loading="lazy">
+                        <h3><?= htmlspecialchars($fossil->getName()) ?></h3>
                         <p>
                             <?php if ($fossil->getPeriod() != null): ?>
-                                <?= Tools::sanitize($fossil->getPeriod()->getName()) ?>
+                                <?= htmlspecialchars($fossil->getPeriod()->getName()) ?>
                             
 
                             <?php elseif ($fossil->getDatingMin() != null): ?>
                                 <?php if ($fossil->getDatingMin() != $fossil->getDatingMax()): ?>
-                                    <?= Tools::sanitize($fossil->getDatingMin() . "Ma à " . $fossil->getDatingMax() . "Ma") ?>
+                                    <?= htmlspecialchars($fossil->getDatingMin() . "Ma à " . $fossil->getDatingMax() . "Ma") ?>
                                 <?php else: ?>
-                                    <?= Tools::sanitize($fossil->getDatingMin() . "Ma") ?>
+                                    <?= htmlspecialchars($fossil->getDatingMin() . "Ma") ?>
                                 <?php endif ?>
                             <?php endif ?>
                         </p>

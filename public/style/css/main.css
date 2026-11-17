@@ -29,6 +29,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  height: auto;
+  width: auto;
+}
+
 header, footer {
   display: flex;
   align-items: center;
@@ -124,6 +129,9 @@ header ul li:hover, footer ul li:hover {
     text-decoration: underline #E7512C;
     font-weight: 800;
   }
+  header nav ul.is_expanded {
+    display: flex;
+  }
   footer {
     flex-direction: column;
   }
@@ -161,22 +169,12 @@ header ul li:hover, footer ul li:hover {
     padding: 1vh 4vw;
   }
   footer nav ul {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
+    max-width: 400px;
     padding: 0;
-  }
-  footer nav ul div:first-child {
-    grid-area: 1;
-    display: flex;
     justify-content: center;
-    gap: 2rem;
-  }
-  footer nav ul div:last-child {
-    grid-area: 2;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
   }
 }
 main {
